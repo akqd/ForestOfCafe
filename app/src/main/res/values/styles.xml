@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.Brown" parent="AppTheme">
+        <item name="android:statusBarColor" tools:targetApi="28">@color/colorBrown
+        </item> <!--Status Bar의 배경색-->
+        <item name="android:windowLightStatusBar" tools:targetApi="28">false
+        </item> <!--Status Bar 아이콘의 색상 true:검은 아이콘, false:흰 아이콘-->
+        <item name="toolbarStyle">@style/ToolbarStyle.Brown</item> <!--Toolbar 스타일-->
+        <item name="actionMenuTextColor">@color/colorIvory</item> <!--액션 메뉴의 텍스트 색상-->
+        <item name="colorControlNormal">@color/colorIvory</item> <!--홈/뒤로가기 버튼의 색상-->
+    </style>
+
+    <!--Toolbar 스타일-->
+    <style name="ToolbarStyle.Brown" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorBrown
+        </item> <!-- Toolbar의 배경색-->
+        <item name="titleTextAppearance">@style/ToolbarTitleStyle.Ivory
+        </item> <!-- Toolbar의 타이틀 텍스트-->
+        <item name="subtitleTextAppearance">@style/ToolbarSubtitleStyle.Ivory
+        </item> <!-- Toolbar의 서브타이틀 텍스트-->
+    </style>
+
+    <!-- Toolbar의 타이틀 텍스트-->
+    <style name="ToolbarTitleStyle.Ivory" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/colorIvory</item> <!-- Toolbar의 타이틀 텍스트 색상-->
+        <item name="android:textSize">15dp</item> <!-- Toolbar의 타이틀 텍스트 사이즈-->
+    </style>
+
+    <!-- Toolbar의 서브타이틀 텍스트-->
+    <style name="ToolbarSubtitleStyle.Ivory" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">@color/colorIvory</item> <!-- Toolbar의 서브타이틀 텍스트 색상-->
+        <item name="android:textSize">12dp</item> <!-- Toolbar의 서브타이틀 텍스트 사이즈-->
+    </style>
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">12sp</item> <!-- 네비게이션바의 텍스트 사이즈-->
+    </style>
+    <style name="BottomNavigationView.active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">11sp</item> <!-- 네비게이션바의 액티브 텍스트 사이즈-->
+    </style>
+
+</resources>
