@@ -13,7 +13,7 @@ public class Search_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.search);
+        setContentView(R.layout.activity_search);
 
         search_view = findViewById(R.id.search_view);
     }

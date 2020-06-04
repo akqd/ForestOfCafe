@@ -1,35 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    >
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.MapFragment"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        map:cameraTargetLat="37.584"
+        map:cameraTargetLng="126.925"
+        map:cameraZoom="15"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.516"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvNeighborhoodCafe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="메인 화면"
-        android:textSize="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="근처 카페"
+        android:textColor="#713614"
+        android:textSize="24sp"
+        map:layout_constraintLeft_toLeftOf="parent"
+        map:layout_constraintTop_toBottomOf="@id/map" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMore"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--    <ScrollView
-            android:id="@+id/sv_community"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tvNeighborhoodCafe" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="메인 화면"
-                    />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </ScrollView>-->
+    <TextView
+        android:id="@+id/tvMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:text="더보기"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,47 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:liftOnScroll="false"
-        >
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:id="@+id/toolbar"
-            app:menu="@menu/menu_toolbar"
-            />
-    </com.google.android.material.appbar.AppBarLayout>
+
     <ScrollView
         android:id="@+id/sv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="0.8">
+        app:layout_constraintVertical_weight="0.8"></ScrollView>
 
-    </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:liftOnScroll="false">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/menu_toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:background="@color/colorBrown"
-        app:itemIconTint="@color/colorIvory"
-        app:itemTextColor="@color/colorIvory"
         app:itemIconSize="28dp"
+        app:itemIconTint="@color/colorIvory"
+        app:itemTextAppearance="@style/BottomNavigationView"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.active"
+        app:itemTextColor="@color/colorIvory"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_weight="0.2"
-        app:itemTextAppearanceActive="@style/BottomNavigationView.active"
-        app:itemTextAppearance="@style/BottomNavigationView"
-        android:id="@+id/navigation_bottom"
-        app:menu="@menu/menu_bottom"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp">
+        app:menu="@menu/menu_bottom">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>
