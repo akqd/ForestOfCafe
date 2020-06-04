@@ -15,7 +15,7 @@
         </item> <!--Status Bar 아이콘의 색상 true:검은 아이콘, false:흰 아이콘-->
         <item name="toolbarStyle">@style/ToolbarStyle.Brown</item> <!--Toolbar 스타일-->
         <item name="actionMenuTextColor">@color/colorIvory</item> <!--액션 메뉴의 텍스트 색상-->
-        <item name="colorControlNormal">@color/colorIvory</item> <!--홈/뒤로가기 버튼의 색상-->
+        <item name="colorControlNormal">@color/colorBlack</item> <!--홈/뒤로가기 버튼의 색상-->
     </style>
 
     <!--Toolbar 스타일-->

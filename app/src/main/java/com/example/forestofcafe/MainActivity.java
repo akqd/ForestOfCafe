@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -30,11 +31,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("touch","작동하네요");
+        Log.d("touch", "작동하네요");
         toolbar = findViewById(R.id.toolbar); // 툴바 생성
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true); // 커스텀 할 수 있도록 허용
         actionBar.setTitle("카페의 숲"); // 이름 바꿈
 
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation_bottom);
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.sv_main, home_fragment).commitNowAllowingStateLoss(); // 초기화면 세팅
+        transaction.add(R.id.sv_main, home_fragment).commitNowAllowingStateLoss(); // 초기화면 세팅
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -76,18 +76,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) { //함수 재정의 툴바에 아이콘 올리기
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_toolbar, menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.toolbar_search :{
-                Log.d("touch","작동하네요");
-                Toast.makeText(getApplicationContext(), "서치 버튼 클릭", Toast.LENGTH_SHORT).show();
+        switch (item.getItemId()) {
+            case R.id.toolbar_search: {
+                Log.d("touch", "작동하네요");
+                Toast.makeText(this, "서치 버튼 클릭", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),Search_Activity.class);
+                startActivity(intent);
                 return true;
             }
             default:
