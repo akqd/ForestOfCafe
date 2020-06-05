@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/spiner"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:entries="@array/Sort"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </Spinner>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spiner">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@color/ivory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            //작성자 사진
+
+            <ImageView
+                android:id="@+id/Writer_Image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/default_comunity_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            //작성자 ID
+
+            <TextView
+                android:id="@+id/Writer_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingTop="15dp"
+                android:text="작성자 이름"
+                android:textColor="@color/brown"
+                app:layout_constraintStart_toEndOf="@id/Writer_Image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            //좋아요 수
+
+            <TextView
+                android:id="@+id/Like_Num"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="13"
+                android:textColor="@color/brown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            //좋아요 버튼
+
+            <ImageButton
+                android:id="@+id/Like_Button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="0dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/color_hart"
+                app:layout_constraintEnd_toStartOf="@id/Like_Num"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            //댓글수
+
+            <TextView
+                android:id="@+id/Comment_Num"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@color/brown"
+                app:layout_constraintEnd_toStartOf="@+id/Like_Button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            //댓글버튼
+
+            <ImageButton
+                android:id="@+id/Comment_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="0dp"
+                android:paddingTop="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/comment"
+                app:layout_constraintEnd_toStartOf="@+id/Comment_Num"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            //카페이름
+
+            <TextView
+                android:id="@+id/Cafe_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:paddingLeft="10dp"
+                android:text="카페이름"
+                android:textColor="@color/brown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Writer_Image" />
+
+            //카페주소
+
+            <TextView
+                android:id="@+id/Cafe_Adress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:paddingLeft="10dp"
+                android:text="카페주소"
+                android:textColor="@color/brown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Cafe_Name" />
+
+            //별점
+
+            <RatingBar
+                android:id="@+id/Star_Num"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        //카페사진을 보여줌
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/jeongdong"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/weakivory"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgView">
+
+            //리뷰를 작성해줌
+
+            <TextView
+                android:id="@+id/Review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:paddingTop="8dp"
+                android:text="카페에 대한 리뷰가 작성됨"
+                android:textColor="@color/brown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            //chip쓰려면 [implementation 'com.google.android.material:material:1.0.0'] Sync해주기
+            <HorizontalScrollView
+                android:id="@+id/scView"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipgroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#HashTag"
+                        android:textColor="#713614"
+                        app:chipBackgroundColor="#FFF6D1"
+                        app:chipStrokeColor="#FFFFFF"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#HashTag"
+                        android:textColor="#713614"
+                        app:chipBackgroundColor="#FFF6D1"
+                        app:chipStrokeColor="#FFFFFF"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#HashTag"
+                        android:textColor="#713614"
+                        app:chipBackgroundColor="#FFF6D1"
+                        app:chipStrokeColor="#FFFFFF"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#HashTag"
+                        android:textColor="#713614"
+                        app:chipBackgroundColor="#FFF6D1"
+                        app:chipStrokeColor="#FFFFFF"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#HashTag"
+                        android:textColor="#713614"
+                        app:chipBackgroundColor="#FFF6D1"
+                        app:chipStrokeColor="#FFFFFF"/>
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

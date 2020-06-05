@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Sort">
+        <item>최근작성순</item>
+        <item>댓글순</item>
+        <item>좋아요순</item>
+    </string-array>
+</resources>
