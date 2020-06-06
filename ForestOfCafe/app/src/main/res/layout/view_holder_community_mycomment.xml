@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:background="#fff6d1">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_profile"
+        android:id="@+id/imgPostWriter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="게시글 작성자"
+        android:id="@+id/tvPostWriter"
+        android:textSize="16sp"
+        android:textColor="#713614"
+        app:layout_constraintLeft_toRightOf="@id/imgPostWriter"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp" />
+
+    <TextView
+        android:id="@+id/tvCafeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="카페이름"
+        android:textColor="#713614"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgPostWriter" />
+
+    <TextView
+        android:id="@+id/tvCafeLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="ㅇㅇ시 ㅇㅇ구 ㅇㅇ동"
+        android:textColor="#713614"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCafeName" />
+
+    <TextView
+        android:id="@+id/tvCommunityContent"
+        android:layout_width="241dp"
+        android:layout_height="27dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="게시글 내용"
+        android:textColor="#713614"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCafeLocation" />
+
+    <ImageView
+        android:id="@+id/imgCommunityPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_comment"
+        android:id="@+id/imgCommentCount"
+        app:layout_constraintTop_toBottomOf="@id/tvCommunityContent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toLeftOf="@id/tvCommentContent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내 댓글 내용"
+        android:textSize="16sp"
+        android:textColor="#713614"
+        android:id="@+id/tvCommentContent"
+        app:layout_constraintLeft_toRightOf="@id/imgCommentCount"
+        app:layout_constraintTop_toBottomOf="@id/tvCommunityContent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="작성일시(시간)"
+        android:id="@+id/tvCommentWriteTime"
+        android:textSize="16sp"
+        android:textColor="#713614"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCommentContent"
+        app:layout_constraintLeft_toRightOf="@id/imgCommentCount"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:id="@+id/btnModify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:text="수정"
+        android:textColor="#713614"
+        android:textSize="16sp"
+        app:layout_constraintRight_toLeftOf="@id/btnDelete"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:text="삭제"
+        android:textColor="#713614"
+        android:textSize="16sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

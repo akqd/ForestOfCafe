@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <ImageView
+    android:id="@+id/imgMainCafe1"
+    android:layout_width="100dp"
+    android:layout_height="80dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/ic_launcher_foreground"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCafeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="카페이름"
+        android:textColor="#713614"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvCafeDistance"
+        app:layout_constraintLeft_toRightOf="@id/imgMainCafe1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCafeDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="000m"
+        android:textColor="#713614"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/imgMainCafe1"
+        app:layout_constraintTop_toBottomOf="@id/tvCafeName" />
+
+    <TextView
+        android:id="@+id/tvCafeOpenClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="CLOSE"
+        android:textColor="#713614"
+        android:textSize="24sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgMainCafe1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

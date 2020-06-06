@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_profile"
+        android:title="내 정보"
+        android:icon="@drawable/ic_bottom_profile"
+        app:showAsAction="always"
+        />1
+    <item
+        android:id="@+id/bottom_favorite"
+        android:title="즐겨찾기"
+        android:icon="@drawable/ic_heart"
+
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/bottom_home"
+        android:title="홈"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/bottom_community"
+        android:title="커뮤니티"
+        android:icon="@drawable/ic_community"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/bottom_setting"
+        android:title="설정"
+        android:icon="@drawable/ic_setting"
+        app:showAsAction="always"
+        />
+
+</menu>
