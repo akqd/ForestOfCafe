@@ -7,13 +7,14 @@
     tools:context=".MainActivity">
 
     <ScrollView
-        android:id="@+id/sv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="0.8"></ScrollView>
-
+        app:layout_constraintVertical_weight="0.8"
+        android:id="@+id/sv_main"
+        android:scrollbars="none">
+    </ScrollView>
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +37,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="@color/colorBrown"
-        app:itemIconSize="28dp"
+        app:itemIconSize="30dp"
         app:itemIconTint="@color/colorIvory"
         app:itemTextAppearance="@style/BottomNavigationView"
         app:itemTextAppearanceActive="@style/BottomNavigationView.active"
@@ -44,6 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_weight="0.2"
+
         app:menu="@menu/menu_bottom">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>

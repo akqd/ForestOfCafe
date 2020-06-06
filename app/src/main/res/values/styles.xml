@@ -1,13 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     <style name="Theme.Brown" parent="AppTheme">
         <item name="android:statusBarColor" tools:targetApi="28">@color/colorBrown
         </item> <!--Status Bar의 배경색-->
@@ -17,7 +17,6 @@
         <item name="actionMenuTextColor">@color/colorIvory</item> <!--액션 메뉴의 텍스트 색상-->
         <item name="colorControlNormal">@color/colorBlack</item> <!--홈/뒤로가기 버튼의 색상-->
     </style>
-
     <!--Toolbar 스타일-->
     <style name="ToolbarStyle.Brown" parent="Widget.AppCompat.Toolbar">
         <item name="android:background">@color/colorBrown
@@ -27,13 +26,11 @@
         <item name="subtitleTextAppearance">@style/ToolbarSubtitleStyle.Ivory
         </item> <!-- Toolbar의 서브타이틀 텍스트-->
     </style>
-
     <!-- Toolbar의 타이틀 텍스트-->
     <style name="ToolbarTitleStyle.Ivory" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@color/colorIvory</item> <!-- Toolbar의 타이틀 텍스트 색상-->
         <item name="android:textSize">15dp</item> <!-- Toolbar의 타이틀 텍스트 사이즈-->
     </style>
-
     <!-- Toolbar의 서브타이틀 텍스트-->
     <style name="ToolbarSubtitleStyle.Ivory" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
         <item name="android:textColor">@color/colorIvory</item> <!-- Toolbar의 서브타이틀 텍스트 색상-->
@@ -45,5 +42,10 @@
     <style name="BottomNavigationView.active" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">11sp</item> <!-- 네비게이션바의 액티브 텍스트 사이즈-->
     </style>
+    <style name="Test_chip_style" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:layout_width">wrap_content</item> <!-- 네비게이션바의 액티브 텍스트 사이즈-->
+        <item name="android:layout_height">wrap_content</item> <!-- 네비게이션바의 액티브 텍스트 사이즈-->
+        <item name="android:textColor">@color/colorBrown</item>
+            </style>
 
 </resources>

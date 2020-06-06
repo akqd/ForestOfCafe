@@ -19,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager = getSupportFragmentManager(); // 프래그먼트 관리자 생성
+    FragmentTransaction transaction ;
     Toolbar toolbar;
     // 프래그먼트 생성
     Profile_fragment profile_fragment = new Profile_fragment();
@@ -36,19 +37,17 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("카페의 숲"); // 이름 바꿈
-
-
         // 뷰 인플레이팅
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation_bottom);
 
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.sv_main, home_fragment).commitNowAllowingStateLoss(); // 초기화면 세팅
+        transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.sv_main, home_fragment).commitNowAllowingStateLoss(); // 초기화면 세팅
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) { // 바텀 바 아이템 터치시 화면 전환
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction = fragmentManager.beginTransaction();
                 switch (menuItem.getItemId()) {
                     case R.id.bottom_community: {
                         transaction.replace(R.id.sv_main, community_fragment).commitNowAllowingStateLoss();
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                         transaction.replace(R.id.sv_main, profile_fragment).commitNowAllowingStateLoss();
                         break;
                     }
-                    case R.id.bottom_settings: {
+                    case R.id.bottom_setting: {
                         transaction.replace(R.id.sv_main, setting_fragment).commitNowAllowingStateLoss();
                         break;
                     }

@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/person"
+        android:src="@drawable/ic_profile"
         android:id="@+id/imgPostWriter"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -78,7 +78,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/message"
+        android:src="@drawable/ic_comment"
         android:id="@+id/imgCommentCount"
         app:layout_constraintTop_toBottomOf="@id/tvCommunityContent"
         app:layout_constraintLeft_toLeftOf="parent"

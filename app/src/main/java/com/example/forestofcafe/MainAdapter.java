@@ -37,11 +37,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
     }
 
     @NonNull
-
     @Override
 
     public MainHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View holderView = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder_main_cafelist, parent, false);
         mainHolder = new MainHolder(holderView);
         return mainHolder;

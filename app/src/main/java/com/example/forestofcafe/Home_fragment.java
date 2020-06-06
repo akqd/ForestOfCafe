@@ -2,11 +2,13 @@ package com.example.forestofcafe;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,45 +27,41 @@ public class Home_fragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
-
-/*    public Home_fragment() {
-        // Required empty public constructor
-    }
-
-    public static Home_fragment newInstance(String param1, String param2) {
-        Home_fragment fragment = new Home_fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    View v;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }*/
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_menu_home, container, false);
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         context = getActivity();
-        recyclerView = v.findViewById(R.id.recyclerView);
+        recyclerView = getActivity().findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
         String[] Cafe_name = {"카페이름1", "카페이름2","카페이름3","카페이름1", "카페이름2", "카페이름3"};
         String[] Cafe_distance = {"500m", "1km", "1.5km","500m", "1km", "1.5km"};
         String[] Cafe_openclose = {"CLOSE", "OPEN", "OPEN","CLOSE", "OPEN", "OPEN"};
         Integer[] Cafe_images = {R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground};
-        adapter = new  com.example.forestofcafe.MainAdapter(Cafe_name, Cafe_distance, Cafe_openclose, Cafe_images);
+        adapter = new com.example.forestofcafe.MainAdapter(Cafe_name, Cafe_distance, Cafe_openclose, Cafe_images);
         recyclerView.setAdapter(adapter);
+    }
 
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        try {
+            v = inflater.inflate(R.layout.fragment_menu_home, container, false);
+        }catch(InflateException e){ // 구글 Map fragment inflate 에러 무시
+        }
         return v;
+    }
+
+    @Override
+    public void onDestroyView() { // 화면에서 라라질때 프래그먼트의 뷰 삭제
+        super.onDestroyView();
+        if(v != null){
+            ViewGroup parent = (ViewGroup) v.getParent();
+            if(parent!= null){
+                parent.removeView(v);
+            }
+        }
     }
 }
