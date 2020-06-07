@@ -6,16 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- 스크롤 뷰 height match_parent -> wrap_content 수정
+        Top_toTop parent -> Top_toBottom appBarLayout2 수정
+        수정 전 : 앱 바에 내용 일부가 가려짐
+        수정 후 : 앱 바를 제외한 부분부터 화면 시작 -->
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout2"
         app:layout_constraintVertical_weight="0.8"
         android:id="@+id/sv_main"
         android:scrollbars="none">
     </ScrollView>
+
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -29,6 +36,7 @@
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/menu_toolbar" />
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom"

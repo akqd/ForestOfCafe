@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    >
+    <!-- 즐겨찾기 카페 리스트 메인-->
+    <ImageView
+        android:id="@+id/ic_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv1"
+
+        />
 
     <TextView
+
+        android:id="@+id/tv1"
+        android:text="즐겨찾기한 카페"
+        android:textSize="20sp"
+        android:textColor="#713614"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ic_favorite"
+        app:layout_constraintBottom_toBottomOf="@id/ic_favorite"
+        app:layout_constraintLeft_toRightOf="@id/ic_favorite"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="즐겨찾기"
-        android:textSize="500dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ic_favorite"
+        app:layout_constraintLeft_toLeftOf="@id/ic_favorite"
+        android:layout_margin="5dp"
+        />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
