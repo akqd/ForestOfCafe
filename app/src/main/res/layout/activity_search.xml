@@ -27,7 +27,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_hot"
                 android:id="@+id/linear_chip"
                 >
-
                 <com.google.android.material.chip.ChipGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -138,16 +137,16 @@
                 app:layout_constraintRight_toRightOf="@id/guideline_right"
                 />
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_result"
-            android:layout_marginTop="3dp"
-            android:text="검색 결과"
-            android:textColor="@color/colorBrown"
-            app:layout_constraintTop_toBottomOf="@id/linear_chip"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@id/guideline_left"
-            />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_result"
+                android:layout_marginTop="3dp"
+                android:text="검색 결과"
+                android:textColor="@color/colorBrown"
+                app:layout_constraintTop_toBottomOf="@id/linear_chip"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+                />
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline_top"
                 android:layout_width="wrap_content"
