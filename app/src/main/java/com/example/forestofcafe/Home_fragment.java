@@ -7,14 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import org.w3c.dom.Text;
-
 import java.util.concurrent.TimeoutException;
 
 
@@ -55,7 +52,7 @@ public class Home_fragment extends Fragment {
     }
 
     @Override
-    public void onDestroyView() { // 화면에서 라라질때 프래그먼트의 뷰 삭제
+    public void onDestroyView() { // 화면에서 사라질때 프래그먼트의 뷰 삭제
         super.onDestroyView();
         if(v != null){
             ViewGroup parent = (ViewGroup) v.getParent();

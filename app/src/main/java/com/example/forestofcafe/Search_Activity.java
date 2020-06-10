@@ -43,7 +43,15 @@ public class Search_Activity extends AppCompatActivity {
         search_view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) { // 작성한 다음 검색 버튼을 눌렀을때 검색
-                return true; // 사용하는 곳의 반환값은 true
+                addItem(getDrawable(R.drawable.cafe_image),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
+                addItem(getDrawable(R.drawable.cafe1),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
+                addItem(getDrawable(R.drawable.cafe2),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
+                addItem(getDrawable(R.drawable.cafe3),"CLOSE","카페4","카페4주소","#대충 #만듬","650km");
+                addItem(getDrawable(R.drawable.cafe4),"OPEN","카페5","카페5주소","#대충 #만듬","750km");
+                sAdapter.notifyDataSetChanged();
+                return true;
+
+                // 사용하는 곳의 반환값은 true
             }
             @Override
             public boolean onQueryTextChange(String newText) { // 작성하는 순간마다 검색 됨
@@ -51,12 +59,6 @@ public class Search_Activity extends AppCompatActivity {
 
             }
         });
-        addItem(getDrawable(R.drawable.cafe_image),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
-        addItem(getDrawable(R.drawable.cafe1),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
-        addItem(getDrawable(R.drawable.cafe2),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
-        addItem(getDrawable(R.drawable.cafe3),"CLOSE","카페4","카페4주소","#대충 #만듬","650km");
-        addItem(getDrawable(R.drawable.cafe4),"OPEN","카페5","카페5주소","#대충 #만듬","750km");
-        sAdapter.notifyDataSetChanged();
     }
     public void addItem(Drawable cafe_image, String op_cl, String title, String location, String keyword, String distance){
         SearchResult_Item item = new SearchResult_Item();
