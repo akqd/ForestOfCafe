@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/ic_location"
+        android:width="15dp"
+        android:height="15dp"
+        />
+</layer-list>
+<!--텍스트뷰크기에 맞게 크기 커스텀함!-->
