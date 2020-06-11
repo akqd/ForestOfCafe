@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <ScrollView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -15,7 +16,7 @@
         android:scrollbars="none"
         app:layout_constraintVertical_weight="11"
         >
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
@@ -33,6 +34,7 @@
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/menu_toolbar" />
     </com.google.android.material.appbar.AppBarLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom"
         android:layout_width="match_parent"

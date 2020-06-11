@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -33,7 +34,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_MainCafeList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
         app:layout_constraintBottom_toTopOf="@+id/tvMore"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,11 +42,45 @@
 
     <TextView
         android:id="@+id/tvMore"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:clickable="true"
         android:text="더보기"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rv_MainCafeList" />
+
+
+    //-------------------------------메인 커뮤니티----------------------------------------
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="커뮤니티"
+        android:textColor="@color/colorBrown"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMore" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/colorIvory"
+        android:id="@+id/comm_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1"
+        app:layout_goneMarginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@id/comm_more"/>
+
+    <TextView
+        android:id="@+id/comm_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="더보기"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/comm_recyclerView"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
