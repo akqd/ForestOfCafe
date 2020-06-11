@@ -44,7 +44,6 @@ public class FavoriteCafe_Adapter extends RecyclerView.Adapter<FavoriteCafe_Adap
         holder.cafe_number.setText(item.getCafe_number());
         holder.cafe_notice.setText(item.getCafe_notice());
         holder.cafe_open_close.setText(item.getCafe_open_close());
-
     }
 
     @Override
