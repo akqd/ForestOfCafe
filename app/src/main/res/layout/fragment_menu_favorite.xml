@@ -4,11 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/favorite_icon"
+        android:src="@drawable/ic_heart"
+        android:layout_margin="10dp"
+        android:tint="#FFB4B4"
+        app:layout_constraintLeft_toLeftOf="@id/recyclerView"
+        app:layout_constraintRight_toLeftOf="@id/tv1"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <TextView
+
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="즐겨찾기한 카페"
+        android:textColor="#713614"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/favorite_icon"
+        app:layout_constraintLeft_toRightOf="@+id/favorite_icon"
+        app:layout_constraintBottom_toBottomOf="@id/favorite_icon"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="즐겨찾기"
-        android:textSize="500dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="5dp"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
