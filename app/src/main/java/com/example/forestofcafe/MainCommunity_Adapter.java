@@ -19,6 +19,7 @@ public class MainCommunity_Adapter extends RecyclerView.Adapter<MainCommunity_Ad
         this.community_itemList = community_itemList;
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {

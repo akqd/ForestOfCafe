@@ -29,7 +29,7 @@ android:theme="@style/Theme.Brown"
 <meta-data
     android:name="com.google.android.geo.API_KEY"
     android:value="AIzaSyB4EPpzqaR6r9uqVzzJGeBcAwotcVF9jGQ" />
-<activity android:name=".MainActivity">
+<activity android:name=".MainActivity" >
     <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -37,6 +37,7 @@ android:theme="@style/Theme.Brown"
     </intent-filter>
 </activity>
 <activity android:name=".Search_Activity"
+    android:windowSoftInputMode="adjustNothing"
     >
 </activity>
 </application>
