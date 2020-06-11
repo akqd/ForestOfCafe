@@ -46,6 +46,7 @@ public class FavoriteCafe_Adapter extends RecyclerView.Adapter<FavoriteCafe_Adap
         holder.cafe_open_close.setText(item.getCafe_open_close());
     }
 
+
     @Override
     public int getItemCount(){
 
