@@ -33,7 +33,6 @@ public class FavoriteCafe_Adapter extends RecyclerView.Adapter<FavoriteCafe_Adap
 
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull FavoriteCafe_Adapter.ViewHolder holder, int position) {
 
