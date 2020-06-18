@@ -24,32 +24,34 @@ public class SearchResult_Adapter extends RecyclerView.Adapter<SearchResult_Adap
         //데이터 리스트 객체 전달
         data = list;
     }
+
     @Override
     public SearchResult_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // 아이템 뷰를 위한 뷰 홀더 객체 생성하여 리턴.
         Context context = parent.getContext();
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.view_holder_search,parent,false);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.view_holder_search, parent, false);
         SearchResult_Adapter.ViewHolder vh = new SearchResult_Adapter.ViewHolder(view);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            // 포지션에 대당하는 데이터를 뷰 홀더의 아이템 뷰에 표시함
-            SearchResult_Item item = data.get(position);
-            holder.cafe_image.setImageDrawable(item.getCafe_image());
-            holder.tv_title.setText(item.getCafe_title());
-            holder.tv_OP_CL.setText(item.getCafe_OP_CL());
-            holder.tv_distance.setText(item.getCafe_distance());
-            holder.tv_keyword.setText(item.getCafe_keyword());
-            holder.tv_location.setText(item.getCafe_location());
+        // 포지션에 대당하는 데이터를 뷰 홀더의 아이템 뷰에 표시함
+        SearchResult_Item item = data.get(position);
+        holder.cafe_image.setImageDrawable(item.getCafe_image());
+        holder.tv_title.setText(item.getCafe_title());
+        holder.tv_OP_CL.setText(item.getCafe_OP_CL());
+        holder.tv_distance.setText(item.getCafe_distance());
+        holder.tv_keyword.setText(item.getCafe_keyword());
+        holder.tv_location.setText(item.getCafe_location());
     }
 
     @Override
     public int getItemCount() {
         return data.size();
     }
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
         // 아이템 뷰를 저장하는 뷰 홀더 클래스
@@ -74,20 +76,22 @@ public class SearchResult_Adapter extends RecyclerView.Adapter<SearchResult_Adap
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
-                    if(pos != RecyclerView.NO_POSITION){
+                    if (pos != RecyclerView.NO_POSITION) {
                         SearchResult_Item item = data.get(pos);
-                        if(mListner != null){
-                            mListner.onItemClick(v,pos);
+                        if (mListner != null) {
+                            mListner.onItemClick(v, pos);
                         }
                     }
                 }
             });
         }
     }
-    public interface OnItemClickListener{
+
+    public interface OnItemClickListener {
         void onItemClick(View v, int postion);
     }
-    public void setOnItemClickListener(OnItemClickListener listener){
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
         mListner = listener;
     }
 }
