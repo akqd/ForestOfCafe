@@ -60,6 +60,7 @@ public class Profile_fragment extends Fragment {
                         break;
                     }
                     case 3 :  {
+                        ((MainActivity)context).replaceFragment(Profile_Edit_fragment.newInstance());
                         break;
                     }
                     case 4 :  {

@@ -15,7 +15,7 @@
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true"
         android:dividerHeight="1dp"
-        android:divider="#914316"
+        android:divider="@color/colorBrownAlpha"
         android:background="@drawable/line_divider"
         />
     <TextView

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorBrown">#713614</color>
+    <color name="colorBrownAlpha">#80713614</color>
     <color name="colorIvory">#fff6d1</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWeakIvory">#F8FFF5</color>
