@@ -17,24 +17,9 @@
         app:layout_constraintTop_toBottomOf="@+id/spiner"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/cafe_img"
-            android:layout_width="350dp"
-            android:layout_height="150dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/cafe1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.547"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-        //카페사진을 보여줌
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="350dp"
+            android:layout_width="400dp"
             android:layout_height="100dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="2dp"
@@ -45,7 +30,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             //작성자 사진
-
             <ImageButton
                 android:id="@+id/Like_Button"
                 android:layout_width="20dp"
@@ -170,9 +154,23 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        //카페사진을 보여줌
+        <ImageView
+            android:id="@+id/cafe_img"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cafe1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_width="400dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_marginBottom="2dp"
