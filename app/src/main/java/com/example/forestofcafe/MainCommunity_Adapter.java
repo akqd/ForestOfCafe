@@ -20,6 +20,7 @@ public class MainCommunity_Adapter extends RecyclerView.Adapter<MainCommunity_Ad
     }
 
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
