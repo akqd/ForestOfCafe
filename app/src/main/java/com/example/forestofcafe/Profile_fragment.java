@@ -70,6 +70,7 @@ public class Profile_fragment extends Fragment {
         });
     }
 
+    
     public void addItem(int menu_icon, String menu_str) {
         ProfileListView_Item item = new ProfileListView_Item();
         item.setMenu_icon(menu_icon);
