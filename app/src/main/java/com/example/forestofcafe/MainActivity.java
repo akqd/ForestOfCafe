@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("touch", "작동하네요");
+
+        Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+        startActivity(intent);
+
+
+
         toolbar = findViewById(R.id.toolbar); // 툴바 생성
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
         ActionBar actionBar = getSupportActionBar();
@@ -69,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                         transaction.replace(R.id.sv_main, setting_fragment).commitNowAllowingStateLoss();
                         break;
                     }
-
                 }
                 return true;
             }

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAddProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:text="프로필 사진 추가"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgProfile" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="아이디             : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAddProfileImage" />
+
+    <EditText
+        android:id="@+id/edtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv1"
+        app:layout_constraintTop_toBottomOf="@id/tvAddProfileImage" />
+
+    <Button
+        android:id="@+id/btnOverlapCheck"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#00ff0000"
+        android:text="중복"
+        android:textColor="@color/colorBrown"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/edtID"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAddProfileImage" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="비밀번호         : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv2"
+        app:layout_constraintTop_toBottomOf="@id/edtID" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="비밀번호 확인 : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+    <EditText
+        android:id="@+id/edtPasswordRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv3"
+        app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+    <TextView
+        android:id="@+id/tvPasswordCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="입력한 비밀번호와 동일합니다."
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtPasswordRepeat" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="닉네임             : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPasswordCheck" />
+
+    <EditText
+        android:id="@+id/edtNickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv4"
+        app:layout_constraintTop_toBottomOf="@id/tvPasswordCheck" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="이름                 : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv4" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv4"
+        app:layout_constraintTop_toBottomOf="@id/edtNickName" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="전화번호         : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv5" />
+
+    <EditText
+        android:id="@+id/edtPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv5"
+        app:layout_constraintTop_toBottomOf="@id/edtName" />
+
+    <TextView
+        android:id="@+id/tv7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="지역                 : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv6" />
+
+    <EditText
+        android:id="@+id/edtArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv7"
+        app:layout_constraintTop_toBottomOf="@id/edtPhoneNumber" />
+
+    <TextView
+        android:id="@+id/tv8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="E-mail 주소     : "
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv7" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBrown"
+        android:ems="10"
+        android:shadowColor="@color/colorBrown"
+        android:textColor="@color/colorBrown"
+        app:layout_constraintLeft_toRightOf="@id/tv3"
+        app:layout_constraintTop_toBottomOf="@id/edtArea" />
+
+    <Button
+        android:id="@+id/btnJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#00ff0000"
+        android:text="회원 가입"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtEmail" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

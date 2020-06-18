@@ -39,6 +39,12 @@ android:theme="@style/Theme.Brown"
 <activity android:name=".Search_Activity"
     >
 </activity>
+    <activity android:name=".StartActivity" />
+    <activity android:name=".StartActivity_Join" />
+    <activity android:name=".StartActivity_Login"/>
+    <activity android:name=".StartActivity_Find" />
+    <activity android:name=".StartActivity_FindEmail" />
+    <activity android:name=".StartActivity_FindPhone" />
 </application>
 
     </manifest>
