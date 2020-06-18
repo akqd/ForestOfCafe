@@ -119,7 +119,6 @@
         app:layout_constraintTop_toTopOf="@id/commBtn"
         app:layout_constraintBottom_toBottomOf="@id/commBtn"
         app:layout_constraintRight_toLeftOf="@id/commBtn"
-
         />
 
     <ImageButton

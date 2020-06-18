@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setTitle("카페의 숲"); // 이름 바꿈
         // 뷰 인플레이팅
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation_bottom);
-
         transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.sv_main, home_fragment).commitNowAllowingStateLoss(); // 초기화면 세팅
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
@@ -96,5 +96,10 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.sv_main,fragment).commit();
     }
 }

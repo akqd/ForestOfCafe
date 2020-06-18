@@ -22,7 +22,6 @@ public class Search_Activity extends AppCompatActivity {
     RecyclerView rv_searchResult;
     SearchResult_Adapter sAdapter ;
     private ArrayList<SearchResult_Item> sData = new ArrayList<SearchResult_Item>();
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

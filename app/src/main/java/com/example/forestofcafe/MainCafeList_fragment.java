@@ -31,38 +31,13 @@ public class MainCafeList_fragment extends Fragment {
     SearchResult_Adapter mAdapter ;
     private ArrayList<SearchResult_Item> mData = new ArrayList<SearchResult_Item>();
 
-/*    public Favorite_fragment() {
-        // Required empty public constructor
-    }
-
-    public static Favorite_fragment newInstance(String param1, String param2) {
-        Favorite_fragment fragment = new Favorite_fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }*/
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
         rv_MainCafeListMore = getActivity().findViewById(R.id.rv_MainCafeListMore);
         layoutManager = new LinearLayoutManager(context);
-        rv_MainCafeListMore.setLayoutManager(layoutManager);
         mAdapter = new SearchResult_Adapter(mData);
-        rv_MainCafeListMore.setAdapter(mAdapter);
-
         addItem(getResources().getDrawable(R.drawable.cafe_image, null),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
         addItem(getResources().getDrawable(R.drawable.cafe1,null),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
         addItem(getResources().getDrawable(R.drawable.cafe2,null),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
@@ -104,5 +79,9 @@ public class MainCafeList_fragment extends Fragment {
                 parent.removeView(v);
             }
         }
+    }
+
+    public static MainCafeList_fragment newInstance() {
+        return new MainCafeList_fragment() ;
     }
 }
