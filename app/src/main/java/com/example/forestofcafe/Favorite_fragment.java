@@ -94,4 +94,8 @@ public class Favorite_fragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_menu_favorite,container,false);
     }
+
+    public static Favorite_fragment newInstance() {
+        return new Favorite_fragment();
+    }
 }

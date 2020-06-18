@@ -3,13 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
+    <ListView
+        android:layout_marginVertical="10dp"
+        android:id="@+id/listv_profile_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="내 정보 화면"
-        android:textSize="500dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_userName"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:scrollbars="none"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:dividerHeight="1dp"
+        android:divider="#914316"
+        android:background="@drawable/line_divider"
+        />
+    <TextView
+        android:layout_marginVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사용자 닉네임"
+        android:id="@+id/tv_userName"
+        android:textColor="@color/colorBrown"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/imgv_user_profile"
+        app:layout_constraintRight_toRightOf="@id/imgv_user_profile"
+        app:layout_constraintTop_toBottomOf="@id/imgv_user_profile" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/imgv_user_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/unknown_profile"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

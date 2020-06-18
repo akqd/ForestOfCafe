@@ -15,6 +15,7 @@
         android:id="@+id/sv_main"
         android:scrollbars="none"
         app:layout_constraintVertical_weight="11"
+        android:fillViewport="true"
         >
     </androidx.core.widget.NestedScrollView>
     <com.google.android.material.appbar.AppBarLayout
