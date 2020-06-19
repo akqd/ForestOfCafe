@@ -38,6 +38,8 @@ public class Favorite_fragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new FavoriteCafe_Adapter(data);
         recyclerView.setAdapter(adapter);
+        data.clear();
+        adapter.notifyDataSetChanged();
 
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_thelight_1,null),"카페 빛","서울 은평구 응암로 14길 26-1","070-8784-1111","오늘은 정상 영업 합니다.","OPEN");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","서울 서대문구 증가로 10길 16-20","010-3331-9085","오늘은 오후부터 영업 시작합니다.","CLOSE");

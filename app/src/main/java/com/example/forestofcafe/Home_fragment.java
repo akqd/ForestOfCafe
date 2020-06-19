@@ -50,6 +50,8 @@ public class Home_fragment extends Fragment {
         rv_MainCafeList.setLayoutManager(layoutManager);
         mAdapter = new MainCafeList_Adapter(mData);
         rv_MainCafeList.setAdapter(mAdapter);
+        mData.clear();
+        mAdapter.notifyDataSetChanged();
         tvCafeListMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +68,8 @@ public class Home_fragment extends Fragment {
         fv_recyclerView.setLayoutManager(fv_layoutManeger);
         fAdapter = new MainFavorite_Adapter(fData);
         fv_recyclerView.setAdapter(fAdapter);
+        fData.clear();
+        fAdapter.notifyDataSetChanged();
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_thelight_1,null),"카페 빛","오늘은 정상 영업 합니다.","OPEN");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","오늘은 오후부터 영업 시작합니다.","CLOSE");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","오늘은 영업 쉽니다.","CLOSE");
