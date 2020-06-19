@@ -6,11 +6,11 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:background="@drawable/favorite_cafe_border"
         android:layout_marginTop="10dp"
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/community_border"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

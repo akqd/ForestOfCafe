@@ -56,7 +56,7 @@ public class Home_fragment extends Fragment {
                 ((MainActivity)getActivity()).replaceFragment(MainCafeList_fragment.newInstance(),null);
             }
         });
-        addCafeListItem("카페이름1", "050m", "OPEN", getResources().getDrawable(R.drawable.cafe1, null));
+        addCafeListItem("카페이름1", "50m", "OPEN", getResources().getDrawable(R.drawable.cafe1, null));
         addCafeListItem("카페이름2", "100m", "CLOSE", getResources().getDrawable(R.drawable.cafe2, null));
         addCafeListItem("카페이름3", "200m", "OPEN", getResources().getDrawable(R.drawable.cafe3, null));
         mAdapter.notifyDataSetChanged();

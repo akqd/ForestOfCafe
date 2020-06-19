@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     Favorite_fragment favorite_fragment = new Favorite_fragment();
     Community_fragment community_fragment = new Community_fragment();
     Setting_fragment setting_fragment = new Setting_fragment();
+    Community_review_write_fragment community_review_write_fragment = new Community_review_write_fragment();
+    Community_post_fragment community_post_fragment = new Community_post_fragment();
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case R.id.bottom_setting: {
-                        transaction.replace(R.id.sv_main, setting_fragment, "setting");
+                        transaction.replace(R.id.sv_main, community_review_write_fragment, "setting");
 
                         break;
                     }

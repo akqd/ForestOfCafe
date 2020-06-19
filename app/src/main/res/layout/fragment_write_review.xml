@@ -17,18 +17,9 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/cafe_info"/>
 
-    <View
-        android:id="@+id/line1"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorBrown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cafe_info" />
-
     <EditText
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:background="@null"
         android:textColor="@color/colorBrown"
         android:layout_width="match_parent"
@@ -36,7 +27,7 @@
         android:id="@+id/et_review"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line1"
+        app:layout_constraintTop_toBottomOf="@id/cafe_info"
         android:hint="내용을 작성해주세요."
         android:gravity="top"/>
 
@@ -45,8 +36,8 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorBrown"
+        android:layout_height="1dp"
+        android:background="@color/colorWeakBrown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_review" />
@@ -71,8 +62,8 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorBrown"
+        android:layout_height="1dp"
+        android:background="@color/colorWeakBrown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_hashtag" />
@@ -83,7 +74,7 @@
         android:id="@+id/attach_list"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="100dp"
         android:hint="첨부목록"
         android:textSize="15dp"
@@ -93,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@id/line3" />
 
     <Button
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:id="@+id/btn_attach"
@@ -108,8 +99,8 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorBrown"
+        android:layout_height="1dp"
+        android:background="@color/colorWeakBrown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_attach" />
@@ -143,8 +134,8 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorBrown"
+        android:layout_height="1dp"
+        android:background="@color/colorWeakBrown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/star_score" />
