@@ -39,6 +39,7 @@ public class Home_fragment extends Fragment {
     MainFavorite_Adapter fAdapter;
     private  ArrayList<MainFavorite_Item> fData = new ArrayList<MainFavorite_Item>();
 
+    
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
