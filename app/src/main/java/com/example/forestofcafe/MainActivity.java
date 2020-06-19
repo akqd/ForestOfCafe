@@ -1,6 +1,7 @@
 package com.example.forestofcafe;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -18,9 +19,14 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+
 public class MainActivity extends AppCompatActivity {
+    final static long FINISH_INTERVAL_TIME = 2000;
+    long backPressedTime;
     FragmentManager fragmentManager = getSupportFragmentManager(); // 프래그먼트 관리자 생성
-    FragmentTransaction transaction ;
+    FragmentTransaction transaction;
     Toolbar toolbar;
     // 프래그먼트 생성
     Profile_fragment profile_fragment = new Profile_fragment();
@@ -28,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Favorite_fragment favorite_fragment = new Favorite_fragment();
     Community_fragment community_fragment = new Community_fragment();
     Setting_fragment setting_fragment = new Setting_fragment();
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("카페의 숲"); // 이름 바꿈
         // 뷰 인플레이팅
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation_bottom);
+        bottomNavigationView = findViewById(R.id.navigation_bottom);
         transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.sv_main, home_fragment).commitNowAllowingStateLoss(); // 초기화면 세팅
+        transaction.replace(R.id.sv_main, home_fragment,"home").commit(); // 초기화면 세팅
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -50,46 +57,52 @@ public class MainActivity extends AppCompatActivity {
                 transaction = fragmentManager.beginTransaction();
                 switch (menuItem.getItemId()) {
                     case R.id.bottom_community: {
-                        transaction.replace(R.id.sv_main, community_fragment).commitNowAllowingStateLoss();
+                        fragmentManager.popBackStackImmediate("community",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                        transaction.replace(R.id.sv_main, community_fragment, "community");
                         break;
                     }
                     case R.id.bottom_favorite: {
-                        transaction.replace(R.id.sv_main, favorite_fragment).commitNowAllowingStateLoss();
+                        fragmentManager.popBackStackImmediate("favorite",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                        transaction.replace(R.id.sv_main, favorite_fragment, "favorite");
                         break;
                     }
                     case R.id.bottom_home: {
-                        transaction.replace(R.id.sv_main, home_fragment).commitNowAllowingStateLoss();
+                        fragmentManager.popBackStackImmediate("home",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                        transaction.replace(R.id.sv_main, home_fragment, "home");
                         break;
                     }
                     case R.id.bottom_profile: {
-                        transaction.replace(R.id.sv_main, profile_fragment).commitNowAllowingStateLoss();
+                        fragmentManager.popBackStackImmediate("profile",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                        transaction.replace(R.id.sv_main, profile_fragment, "profile");
                         break;
                     }
                     case R.id.bottom_setting: {
-                        transaction.replace(R.id.sv_main, setting_fragment).commitNowAllowingStateLoss();
+                        fragmentManager.popBackStackImmediate("setting",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                        transaction.replace(R.id.sv_main, setting_fragment, "setting");
+
                         break;
                     }
 
                 }
+                transaction.commit();
+                transaction.isAddToBackStackAllowed();
                 return true;
             }
         });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) { //함수 재정의 툴바에 아이콘 올리기
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_toolbar, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.toolbar_search: {
                 Log.d("touch", "작동하네요");
                 Toast.makeText(this, "서치 버튼 클릭", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(),Search_Activity.class);
+                Intent intent = new Intent(getApplicationContext(), Search_Activity.class);
                 startActivity(intent);
                 return true;
             }
@@ -97,9 +110,34 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.sv_main,fragment).commit();
+    public void replaceFragment(Fragment fragment, String tag) {
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.sv_main, fragment,tag);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    @Override
+    public void onBackPressed() {
+        if (fragmentManager.getBackStackEntryCount() == 0) {
+            long tempTime = System.currentTimeMillis();
+            long intervalTime = tempTime - backPressedTime;
+            if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime) {
+                super.onBackPressed();
+            } else {
+                backPressedTime = tempTime;
+                Toast.makeText(this, "뒤로가기 버튼을 한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+        super.onBackPressed();
+    }
+    public void updateBottomMenu() {
+        Fragment tag1 = fragmentManager.findFragmentByTag("profile");
+        Fragment tag2 = fragmentManager.findFragmentByTag("favorite");
+        if (tag1 != null && tag1.isVisible()) {
+            bottomNavigationView.getMenu().findItem(R.id.bottom_profile).setChecked(true);
+        } else if (tag2 != null && tag2.isVisible()) {
+            bottomNavigationView.getMenu().findItem(R.id.bottom_favorite).setChecked(true);
+        }
     }
 }

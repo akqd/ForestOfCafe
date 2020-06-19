@@ -1,37 +1,36 @@
 package com.example.forestofcafe;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-
-public class Profile_Edit_fragment extends Fragment {
+public class Profile_Edit_Region_fragment extends Fragment {
     Context context;
     View v ;
-    Button btn_ok;
-    EditText edt_pw;
-    @Override
+    Button btn_region_ok;
+    EditText edt_region,edt_region_detail;
 
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_edit_profile, container, false); // 레이아웃 반환해서 띄웁니다!
+        v = inflater.inflate(R.layout.fragment_edit_profile_region, container, false); // 레이아웃 반환해서 띄웁니다!
         return v;
     }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
-        btn_ok = getActivity().findViewById(R.id.btn_ok);
-        edt_pw = getActivity().findViewById(R.id.edt_pw);
-        btn_ok.setOnClickListener(new View.OnClickListener() {
+        btn_region_ok = getActivity().findViewById(R.id.btn_edit_region_ok);
+        edt_region = getActivity().findViewById(R.id.etd_edit_region);
+        edt_region_detail = getActivity().findViewById(R.id.etd_edit_region);
+        btn_region_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity)context).replaceFragment(Profile_Edit_Menu_fragment.newInstance(),null);
@@ -52,8 +51,9 @@ public class Profile_Edit_fragment extends Fragment {
         super.onStop();
     }
 
-    public static Profile_Edit_fragment newInstance() {
-        return new Profile_Edit_fragment();
+    public static Profile_Edit_Region_fragment newInstance() {
+        return new Profile_Edit_Region_fragment();
     }
 }
+
 

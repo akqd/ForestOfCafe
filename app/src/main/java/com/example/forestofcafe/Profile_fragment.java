@@ -34,23 +34,22 @@ public class Profile_fragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
-        addItem(R.drawable.ic_heart,"즐겨찾기 한 카페");
+        pAdapter = new ProfileListView_Adapter(pList,context);
+        listv_profile_menu = getActivity().findViewById(R.id.listv_profile_menu);
+        listv_profile_menu.setAdapter(pAdapter);
+        pList.clear();
+        pAdapter.notifyDataSetChanged();
+        addItem(R.drawable.ic_bottom_profile,"회원 정보 수정");
         addItem(R.drawable.ic_pencil,"내가 쓴 글");
         addItem(R.drawable.ic_comment,"댓글 단 글");
-        addItem(R.drawable.ic_bottom_profile,"회원 정보 수정");
         addItem(R.drawable.ic_exit,"로그아웃");
-        listv_profile_menu = getActivity().findViewById(R.id.listv_profile_menu);
-        pAdapter = new ProfileListView_Adapter(pList,context);
-        listv_profile_menu.setAdapter(pAdapter);
         pAdapter.notifyDataSetChanged();
         listv_profile_menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0 : {
-                        ((MainActivity)context).replaceFragment(Favorite_fragment.newInstance());
-                        BottomNavigationView btm = ((MainActivity)context).findViewById(R.id.navigation_bottom);
-                        btm.setSelectedItemId(R.id.bottom_favorite);
+                        ((MainActivity)context).replaceFragment(Profile_Edit_fragment.newInstance(),null);
                         break;
                     }
                     case 1 :  {
@@ -60,18 +59,12 @@ public class Profile_fragment extends Fragment {
                         break;
                     }
                     case 3 :  {
-                        ((MainActivity)context).replaceFragment(Profile_Edit_fragment.newInstance());
-                        break;
-                    }
-                    case 4 :  {
                         break;
                     }
                 }
             }
         });
     }
-
-
     public void addItem(int menu_icon, String menu_str) {
         ProfileListView_Item item = new ProfileListView_Item();
         item.setMenu_icon(menu_icon);
@@ -90,8 +83,9 @@ public class Profile_fragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        pList.clear();
-        pAdapter.notifyDataSetChanged();
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

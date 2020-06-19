@@ -52,7 +52,7 @@ public class Home_fragment extends Fragment {
         tvCafeListMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).replaceFragment(MainCafeList_fragment.newInstance());
+                ((MainActivity)getActivity()).replaceFragment(MainCafeList_fragment.newInstance(),null);
             }
         });
         addCafeListItem("카페이름1", "050m", "OPEN", getResources().getDrawable(R.drawable.cafe1, null));

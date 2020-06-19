@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_edit_pw"
+        android:background="@drawable/button_border"
+        android:textColor="@color/colorIvory"
+        android:textStyle="bold"
+        android:text="비밀번호 변경"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        />
+    <Button
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_edit_email"
+        android:background="@drawable/button_border"
+        android:textColor="@color/colorIvory"
+        android:textStyle="bold"
+        android:text="이메일 변경"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/btn_edit_pw"
+        app:layout_constraintRight_toRightOf="@id/btn_edit_pw"
+        app:layout_constraintTop_toBottomOf="@id/btn_edit_pw"
+        android:layout_marginHorizontal="10dp"
+        />
+    <Button
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_edit_call"
+        android:background="@drawable/button_border"
+        android:textColor="@color/colorIvory"
+        android:textStyle="bold"
+        android:text="전화번호 변경"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/btn_edit_pw"
+        app:layout_constraintRight_toRightOf="@id/btn_edit_pw"
+        app:layout_constraintTop_toBottomOf="@id/btn_edit_email"
+        android:layout_marginHorizontal="10dp"
+        />
+    <Button
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_edit_region"
+        android:background="@drawable/button_border"
+        android:textColor="@color/colorIvory"
+        android:textStyle="bold"
+        android:text="지역 변경"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/btn_edit_pw"
+        app:layout_constraintRight_toRightOf="@id/btn_edit_pw"
+        app:layout_constraintTop_toBottomOf="@id/btn_edit_call"
+        android:layout_marginHorizontal="10dp"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28"
+        android:id="@+id/guideline_top"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
