@@ -45,7 +45,6 @@ public class Home_fragment extends Fragment {
     TextView comm_more;
     BottomNavigationView bottomNavigationView;
 
-    
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

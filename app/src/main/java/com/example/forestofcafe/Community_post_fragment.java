@@ -33,7 +33,6 @@ public class Community_post_fragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     CommunityPost_Adapter Adapter;
     private ArrayList<CommunityPost_Item> data = new ArrayList<CommunityPost_Item>();
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
