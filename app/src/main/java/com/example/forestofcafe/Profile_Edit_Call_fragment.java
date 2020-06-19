@@ -31,7 +31,7 @@ public class Profile_Edit_Call_fragment extends Fragment {
         btn_call_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)context).replaceFragment(Profile_Edit_Menu_fragment.newInstance(),null);
+                ((MainActivity)context).fragmentManager.popBackStackImmediate(null,((MainActivity) context).fragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
         });
     }

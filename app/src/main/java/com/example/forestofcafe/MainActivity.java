@@ -23,7 +23,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity {
-    final static long FINISH_INTERVAL_TIME = 2000;
+    final static long FINISH_INTERVAL_TIME = 2000; // ms 단위 1 second = 1000ms
     long backPressedTime;
     FragmentManager fragmentManager = getSupportFragmentManager(); // 프래그먼트 관리자 생성
     FragmentTransaction transaction;
@@ -57,27 +57,22 @@ public class MainActivity extends AppCompatActivity {
                 transaction = fragmentManager.beginTransaction();
                 switch (menuItem.getItemId()) {
                     case R.id.bottom_community: {
-                        fragmentManager.popBackStackImmediate("community",FragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, community_fragment, "community");
                         break;
                     }
                     case R.id.bottom_favorite: {
-                        fragmentManager.popBackStackImmediate("favorite",FragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, favorite_fragment, "favorite");
                         break;
                     }
                     case R.id.bottom_home: {
-                        fragmentManager.popBackStackImmediate("home",FragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, home_fragment, "home");
                         break;
                     }
                     case R.id.bottom_profile: {
-                        fragmentManager.popBackStackImmediate("profile",FragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, profile_fragment, "profile");
                         break;
                     }
                     case R.id.bottom_setting: {
-                        fragmentManager.popBackStackImmediate("setting",FragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, setting_fragment, "setting");
 
                         break;
@@ -85,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 transaction.commit();
-                transaction.isAddToBackStackAllowed();
                 return true;
             }
         });

@@ -33,7 +33,7 @@ public class Profile_Edit_Region_fragment extends Fragment {
         btn_region_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)context).replaceFragment(Profile_Edit_Menu_fragment.newInstance(),null);
+                ((MainActivity)context).replaceFragment(Profile_Edit_Complete_fragment.newInstance(),null);
             }
         });
     }
