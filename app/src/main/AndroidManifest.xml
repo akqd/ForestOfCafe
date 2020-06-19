@@ -40,6 +40,12 @@ android:theme="@style/Theme.Brown"
     android:windowSoftInputMode="adjustNothing"
     >
 </activity>
+    <activity android:name=".StartActivity" />
+    <activity android:name=".StartActivity_Join" />
+    <activity android:name=".StartActivity_Login"/>
+    <activity android:name=".StartActivity_Find" />
+    <activity android:name=".StartActivity_FindEmail" />
+    <activity android:name=".StartActivity_FindPhone" />
 </application>
 
     </manifest>
