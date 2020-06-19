@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +43,7 @@ public class SubCommunity_Adapter extends RecyclerView.Adapter<SubCommunity_Adap
         holder.cafe_address.setText(item.getCafe_Address());
         holder.review.setText(item.getReview());
         holder.comment_num.setText(item.getComment_Num());
+        holder.star_num.setRating(item.getStar_num());
     }
 
     @Override
@@ -59,6 +61,8 @@ public class SubCommunity_Adapter extends RecyclerView.Adapter<SubCommunity_Adap
         private TextView cafe_address;
         private TextView review;
         private TextView comment_num;
+        private RatingBar star_num;
+        //private String hashtag[];
 
         public ViewHoler(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +73,8 @@ public class SubCommunity_Adapter extends RecyclerView.Adapter<SubCommunity_Adap
             cafe_address = itemView.findViewById(R.id.cafe_address);
             review = itemView.findViewById(R.id.review);
             comment_num = itemView.findViewById(R.id.comment_num);
+            star_num = itemView.findViewById(R.id.star_num);
+            //hashtag = itemView.findViewById(R.id.chip_group);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

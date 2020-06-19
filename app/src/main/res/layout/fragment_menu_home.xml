@@ -112,7 +112,8 @@
         app:layout_constraintTop_toBottomOf="@+id/fv_more" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:background="@color/colorIvory"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:id="@+id/comm_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

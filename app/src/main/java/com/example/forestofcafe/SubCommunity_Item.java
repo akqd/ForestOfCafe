@@ -2,7 +2,10 @@ package com.example.forestofcafe;
 
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 public class SubCommunity_Item {
 
@@ -14,6 +17,8 @@ public class SubCommunity_Item {
     private String review;
     private String comment_num;
     private String like_num;
+    private Float star_num;
+    private String[] hashtag;
 
     public Drawable getCafe_Img() {return cafe_img;}
     public void setCafe_Img(Drawable cafe_img) {this.cafe_img = cafe_img;}
@@ -38,4 +43,10 @@ public class SubCommunity_Item {
 
     public String getLike_Num() { return like_num; }
     public void setLike_Num(String like_num){this.like_num = like_num;}
+
+    public Float getStar_num() { return star_num; }
+    public void setStar_num(Float star_num){this.star_num = star_num;}
+
+    public String[] getHashtag() { return hashtag; }
+    public void setHashtag(String[] hashtag) {this.hashtag = hashtag;}
 }

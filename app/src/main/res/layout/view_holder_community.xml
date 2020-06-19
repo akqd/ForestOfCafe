@@ -70,19 +70,22 @@
 
             //좋아요 버튼
 
+            //댓글수
+
             <RatingBar
+
                 android:id="@+id/star_num"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="4dp"
                 android:isIndicator="true"
                 android:numStars="5"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
-
-            //댓글수
 
             <TextView
                 android:id="@+id/comment_num"
@@ -170,11 +173,10 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="400dp"
-            android:layout_height="150dp"
+            android:layout_height="120dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_marginBottom="2dp"
-            android:background="@color/colorWeakIvory"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.547"
@@ -192,12 +194,11 @@
                 android:scrollbars="none"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
-
                 <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/chipgroup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
+                    android:id="@+id/chip_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true">
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip1"
                         android:layout_width="wrap_content"
@@ -205,7 +206,7 @@
                         android:text="#HashTag"
                         android:textColor="#713614"
                         app:chipBackgroundColor="#FFF6D1"
-                        app:chipStrokeColor="#FFFFFF" />
+                        app:chipStrokeColor="#FFFFFF"/>
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
 
