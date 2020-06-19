@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -45,6 +46,14 @@ public class Community_fragment extends Fragment {
         addsubcommitem(getResources().getDrawable(R.drawable.cafe2), getResources().getDrawable(R.drawable.ic_profile),"커피돌이", "Cafe청담", "서울특별시 청담동 선릉로 162길 51", "정동극장 기다리다 잠깐 들어왔는데 분위기 완전 좋아요~", "6", "14", (float) 4.5);
         addsubcommitem(getResources().getDrawable(R.drawable.cafe3), getResources().getDrawable(R.drawable.ic_profile),"커피중독자", "PS카페", "서울특별시 신사동 도산대로 49길", "싱가포르 분위기 카페라고해서 와봤어요~ 이국적인 분위기가 엄청 좋네요", "11", "17", (float) 4.0);
 
+
+        scAdapter.setOnItemClickListener(new SubCommunity_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                ((MainActivity)context).replaceFragment(Community_post_fragment.newInstance(),null);
+                Toast.makeText(context, position+"번", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void addsubcommitem(Drawable cafe_img, Drawable writer_profile, String writer_name, String cafe_name, String cafe_address, String review, String comment_num, String like_num, Float star_num) {
@@ -96,5 +105,19 @@ public class Community_fragment extends Fragment {
         super.onStop();
         scdata.clear();
         scAdapter.notifyDataSetChanged();
+    }
+
+    public void onDestroyView() { // 화면에서 라라질때 프래그먼트의 뷰 삭제
+        super.onDestroyView();
+        if (v != null) {
+            ViewGroup parent = (ViewGroup) v.getParent();
+            if (parent != null) {
+                parent.removeView(v);
+            }
+        }
+    }
+
+    public static Community_fragment newInstance(){
+        return new Community_fragment();
     }
 }

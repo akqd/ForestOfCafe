@@ -38,6 +38,7 @@ public class Home_fragment extends Fragment {
     private ArrayList<MainCafeList_Item> mData = new ArrayList<MainCafeList_Item>();
     MainFavorite_Adapter fAdapter;
     private  ArrayList<MainFavorite_Item> fData = new ArrayList<MainFavorite_Item>();
+    TextView comm_more;
 
     
     @Override
@@ -73,6 +74,7 @@ public class Home_fragment extends Fragment {
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_thelight_1,null),"카페 빛","오늘은 정상 영업 합니다.","OPEN");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","오늘은 오후부터 영업 시작합니다.","CLOSE");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","오늘은 영업 쉽니다.","CLOSE");
+
         //메인커뮤니티화면에 대한 코드 추가(김준희)
         comm_recyclerView = getActivity().findViewById(R.id.comm_recyclerView);
         LinearLayoutManager comm_layoutManager = new LinearLayoutManager(context);
@@ -88,6 +90,14 @@ public class Home_fragment extends Fragment {
         MainCommunity_Adapter comm_adapter = new MainCommunity_Adapter(community_itemList);
         comm_adapter.notifyDataSetChanged();
         comm_recyclerView.setAdapter(comm_adapter);
+
+        comm_more = getActivity().findViewById(R.id.comm_more);
+        comm_more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)context).replaceFragment(Community_fragment.newInstance(),null);
+            }
+        });
     }
 
     public void addCafeListItem(String cafe_name, String cafe_distance, String cafe_openclose, Drawable cafe_image) {
@@ -135,4 +145,5 @@ public class Home_fragment extends Fragment {
     public static Home_fragment newInstance() {
         return new Home_fragment();
     }
+
 }

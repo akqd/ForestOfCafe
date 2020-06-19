@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     Favorite_fragment favorite_fragment = new Favorite_fragment();
     Community_fragment community_fragment = new Community_fragment();
     Setting_fragment setting_fragment = new Setting_fragment();
-    Community_review_write_fragment community_review_write_fragment = new Community_review_write_fragment();
-    Community_post_fragment community_post_fragment = new Community_post_fragment();
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -44,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Intent intent = new Intent(getApplicationContext(), StartActivity.class);
         //startActivity(intent);
+        //overridePendingTransition(R.anim.fadeout,R.anim.fadein);
+
         Log.d("touch", "작동하네요");
         toolbar = findViewById(R.id.toolbar); // 툴바 생성
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case R.id.bottom_setting: {
-                        transaction.replace(R.id.sv_main, community_review_write_fragment, "setting");
+                        transaction.replace(R.id.sv_main, setting_fragment, "setting");
 
                         break;
                     }

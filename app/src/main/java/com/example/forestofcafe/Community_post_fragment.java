@@ -113,4 +113,8 @@ public class Community_post_fragment extends Fragment {
         data.clear();
         Adapter.notifyDataSetChanged();
     }
+
+    public static Community_post_fragment newInstance(){
+        return new Community_post_fragment();
+    }
 }

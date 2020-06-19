@@ -123,6 +123,8 @@
         app:layout_constraintBottom_toTopOf="@id/comm_more"/>
 
     <TextView
+        android:textStyle="bold"
+        android:textColor="@color/colorBrown"
         android:id="@+id/comm_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
