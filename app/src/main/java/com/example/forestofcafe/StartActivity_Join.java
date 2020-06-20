@@ -25,7 +25,6 @@ public class StartActivity_Join extends AppCompatActivity {
 
     private final int GET_GALLERY_IMAGE = 200;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

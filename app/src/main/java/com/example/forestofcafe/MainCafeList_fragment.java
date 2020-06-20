@@ -124,9 +124,9 @@ public class MainCafeList_fragment extends Fragment implements OnMapReadyCallbac
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(37.584783, 126.925187), 15);
         googleMap.animateCamera(cameraUpdate);
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.583954, 126.926244)).title("하우디").snippet("서울 서대문구 명지대길 10 2층"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.585232, 126.923075)).title("또바기").snippet("서울 서대문구 명지대길 108"));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(37.581415, 126.926203)).title("달콤충전소").snippet("서울 서대문구 거북골로 6"));
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.586005, 126.923324)).title("또바기").snippet("서울 서대문구 명지대길 108"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.580897, 126.925141)).title("하우디").snippet("서울 서대문구 명지대길 10 2층"));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(37.579601, 126.924134)).title("퐁신 수플레").snippet("서울 서대문구 거북골로 31-1"));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(37.577736, 126.924150)).title("시차").snippet("서울 서대문구 증가로 10길 16-20"));
     }
