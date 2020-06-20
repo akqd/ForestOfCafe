@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,11 +51,13 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
     TextView comm_more;
     BottomNavigationView bottomNavigationView;
     MapView mapView;
+    NestedScrollView sv_main;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
+        sv_main = getActivity().findViewById(R.id.sv_main);
         mapView = v.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync((OnMapReadyCallback) this);
@@ -77,6 +81,16 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         addCafeListItem("달콤충전소", "390m", "CLOSE", getResources().getDrawable(R.drawable.cafe_sweatfilling_1, null));
         addCafeListItem("하우디", "430m", "OPEN", getResources().getDrawable(R.drawable.cafe_howdy_1, null));
         mAdapter.notifyDataSetChanged();
+
+        mAdapter.setOnItemClickListener(new MainCafeList_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                ((MainActivity) context).replaceFragment(Cafe_infomation_fragment.newInstance(), null);
+                sv_main.scrollTo(0,0);
+                Toast.makeText(context, "카페 상세화면으로 이동", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         //메인 화면 - 즐겨찾는 카페 리스트
         fv_recyclerView = getActivity().findViewById(R.id.fv_recyclerView);
         fv_layoutManeger = new LinearLayoutManager(context);

@@ -18,10 +18,11 @@
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="76dp"
         android:text="카페의 숲"
         android:textColor="@color/colorBrown"
         android:textSize="40sp"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -76,11 +77,9 @@
         android:text="비회원으로 시작하기"
         android:textColor="@color/colorBrown"
         android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnJoin"
-        app:layout_constraintVertical_bias="0.81" />
+        app:layout_constraintTop_toBottomOf="@id/btnJoin" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
