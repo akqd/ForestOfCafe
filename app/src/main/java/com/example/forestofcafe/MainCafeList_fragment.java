@@ -41,14 +41,12 @@ public class MainCafeList_fragment extends Fragment {
         rv_MainCafeListMore.setLayoutManager(layoutManager);
         mAdapter = new SearchResult_Adapter(mData);
         rv_MainCafeListMore.setAdapter(mAdapter);
-
         addItem(getResources().getDrawable(R.drawable.cafe_image, null),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
         addItem(getResources().getDrawable(R.drawable.cafe1,null),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
         addItem(getResources().getDrawable(R.drawable.cafe2,null),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
         addItem(getResources().getDrawable(R.drawable.cafe3,null),"CLOSE","카페4","카페4주소","#대충 #만듬","650km");
         addItem(getResources().getDrawable(R.drawable.cafe4,null),"OPEN","카페5","카페5주소","#대충 #만듬","750km");
         mAdapter.notifyDataSetChanged();
-
     }
 
     public void addItem(Drawable cafe_image, String op_cl, String title, String location, String keyword, String distance){

@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
@@ -59,16 +61,12 @@ public class Home_fragment extends Fragment {
         tvCafeListMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)context).replaceFragment(MainCafeList_fragment.newInstance(),null);
+                ((MainActivity) context).replaceFragment(MainCafeList_fragment.newInstance(), null);
             }
         });
         addCafeListItem("카페이름1", "50m", "OPEN", getResources().getDrawable(R.drawable.cafe1, null));
         addCafeListItem("카페이름2", "100m", "CLOSE", getResources().getDrawable(R.drawable.cafe2, null));
         addCafeListItem("카페이름3", "200m", "OPEN", getResources().getDrawable(R.drawable.cafe3, null));
-
-
-
-
         mAdapter.notifyDataSetChanged();
         //메인 화면 - 즐겨찾는 카페 리스트
         fv_recyclerView = getActivity().findViewById(R.id.fv_recyclerView);
@@ -87,7 +85,7 @@ public class Home_fragment extends Fragment {
         tvFavoriteCafeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).replaceFragment(Favorite_fragment.newInstance(),null);
+                ((MainActivity) getActivity()).replaceFragment(Favorite_fragment.newInstance(), null);
             }
         });
 
