@@ -53,10 +53,11 @@ public class Profile_fragment extends Fragment {
                         break;
                     }
                     case 1 :  {
-                        ((MainActivity)context).replaceFragment(Profile_MyComment_fragment.newInstance(),null);
+                        ((MainActivity)context).replaceFragment(Profile_MyPost_fragment.newInstance(),null);
                         break;
                     }
                     case 2 :  {
+                        ((MainActivity)context).replaceFragment(Profile_MyComment_fragment.newInstance(),null);
                         break;
                     }
                     case 3 :  {

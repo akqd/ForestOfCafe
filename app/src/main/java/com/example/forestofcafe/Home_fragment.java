@@ -54,12 +54,9 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
-
         mapView = v.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
-
         mapView.getMapAsync((OnMapReadyCallback) this);
-
         bottomNavigationView = getActivity().findViewById(R.id.navigation_bottom);
         tvCafeListMore = getActivity().findViewById(R.id.tvMore);
         rv_MainCafeList = getActivity().findViewById(R.id.rv_MainCafeList);
@@ -72,6 +69,7 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         tvCafeListMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((MainActivity)context).sv_main.scrollTo(0,0);
                 ((MainActivity) context).replaceFragment(MainCafeList_fragment.newInstance(), null);
             }
         });
@@ -99,7 +97,6 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         tvFavoriteCafeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)context).replaceFragment(Favorite_fragment.newInstance(), null);
                 bottomNavigationView.setSelectedItemId(R.id.bottom_favorite);
             }
         });
@@ -125,7 +122,6 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         comm_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)context).replaceFragment(Community_fragment.newInstance(),null);
                 bottomNavigationView.setSelectedItemId(R.id.bottom_community);
             }
         });

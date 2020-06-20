@@ -1,136 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:background="#fff6d1">
 
-    <TextView
-        android:id="@+id/tvCafeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:text="카페이름"
-        android:textColor="#713614"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvCafeLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="ㅇㅇ시 ㅇㅇ구 ㅇㅇ동"
-        android:textColor="#713614"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCafeName" />
-
-    <TextView
-        android:id="@+id/tvCommunityContent"
-        android:layout_width="270dp"
-        android:layout_height="84dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:text="게시글 내용"
-        android:textColor="#713614"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCafeLocation" />
-
     <Button
-        android:id="@+id/btnModify"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_mypost_Modify"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:text="수정"
         android:textColor="@color/colorIvory"
-        android:textSize="16sp"
-        app:layout_constraintRight_toLeftOf="@id/btnDelete"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_mypost_Delete"
+        app:layout_constraintTop_toBottomOf="@id/imgv_CafePost" />
 
     <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_mypost_Delete"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
         android:layout_marginRight="5dp"
         android:text="삭제"
         android:textColor="@color/colorIvory"
-        android:textSize="16sp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_mypost_Modify"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/btn_mypost_Modify" />
 
     <ImageView
-        android:id="@+id/imgCommunityPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
+        android:id="@+id/imgv_CafePost"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnDelete" />
+        app:layout_constraintBottom_toBottomOf="@id/tv_mypost_cafeContent"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_mypost_Modify"
+        app:layout_constraintRight_toRightOf="@id/btn_mypost_Delete"
+        app:layout_constraintTop_toTopOf="@id/tv_mypost_cafeName" />
 
     <ImageView
-        android:id="@+id/imgCommentCount"
+        android:id="@+id/imgv_mypost_comment"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
         android:src="@drawable/ic_comment"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/tvCommentCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="수"
-        android:textColor="#713614"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/imgCommentCount" />
+        app:layout_constraintLeft_toLeftOf="@id/tv_mypost_cafeName" />
 
     <ImageView
-        android:id="@+id/imgPickCount"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/imgv_mypost_favorite"
+        android:layout_width="26dp"
+        android:layout_height="24dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_heart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/tvCommentCount" />
+        android:tint="@color/colorRed"
+        app:layout_constraintBottom_toBottomOf="@id/imgv_mypost_comment"
+        app:layout_constraintLeft_toRightOf="@id/tv_CommentCount"
+        app:layout_constraintTop_toTopOf="@id/imgv_mypost_comment"
+
+        />
 
     <TextView
-        android:id="@+id/tvPickCount"
+        android:id="@+id/tv_mypost_cafeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:text="카페 이름"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_mypost_cafeLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="ㅇㅇ시 ㅇㅇ구 ㅇㅇ동"
+        android:textColor="@color/colorBrown"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_mypost_cafeName"
+        app:layout_constraintTop_toBottomOf="@id/tv_mypost_cafeName" />
+
+    <TextView
+        android:id="@+id/tv_mypost_cafeContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="5dp"
+        android:gravity="left|center_vertical"
+        android:maxLines="3"
+        android:text="여기 카페는 빵이 참 맛있는거 같아요 빵이 촉촉하고 완전 바삭바삭해요 "
+        android:textColor="#713614"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_mypost_cafeName"
+        app:layout_constraintRight_toLeftOf="@id/imgv_CafePost"
+        app:layout_constraintTop_toBottomOf="@id/tv_mypost_cafeLocation" />
+
+    <TextView
+        android:id="@+id/tv_CommentCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:text="수"
         android:textColor="#713614"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/imgPickCount" />
+        app:layout_constraintBottom_toBottomOf="@id/imgv_mypost_comment"
+        app:layout_constraintLeft_toRightOf="@id/imgv_mypost_comment"
+        app:layout_constraintTop_toTopOf="@id/imgv_mypost_comment" />
 
     <TextView
-        android:id="@+id/tvCommunityWriteTime"
+        android:id="@+id/tv_FavoriteCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="작성일시(시간)"
+        android:layout_marginLeft="5dp"
+        android:text="수"
         android:textColor="#713614"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgCommunityPost" />
+        app:layout_constraintBottom_toBottomOf="@id/imgv_mypost_favorite"
+        app:layout_constraintLeft_toRightOf="@id/imgv_mypost_favorite"
+        app:layout_constraintTop_toTopOf="@id/imgv_mypost_favorite" />
+
+    <TextView
+        android:id="@+id/tv_mypost_writeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="작성일시(시간)"
+        android:textColor="@color/colorWeakBrown"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_mypost_cafeName"
+        app:layout_constraintLeft_toRightOf="@id/tv_mypost_cafeName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

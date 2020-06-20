@@ -58,36 +58,36 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) { // 바텀 바 아이템 터치시 화면 전환
+                int count = fragmentManager.getBackStackEntryCount();
+                for(int i = 0 ; i < count ; ++i){
+                    fragmentManager.popBackStack();
+                }
                 transaction = fragmentManager.beginTransaction();
                 switch (menuItem.getItemId()) {
                     case R.id.bottom_community: {
                         sv_main.scrollTo(0,0);
-                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, community_fragment);
                         break;
+
                     }
                     case R.id.bottom_favorite: {
                         sv_main.scrollTo(0,0);
-                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, favorite_fragment);
                         break;
                     }
                     case R.id.bottom_home: {
                         sv_main.scrollTo(0,0);
-                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, home_fragment);
                         break;
 
                     }
                     case R.id.bottom_profile: {
                         sv_main.scrollTo(0,0);
-                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, profile_fragment);
                         break;
                     }
                     case R.id.bottom_setting: {
                         sv_main.scrollTo(0,0);
-                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, setting_fragment);
                         break;
                     }

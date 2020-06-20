@@ -34,10 +34,8 @@ public class Profile_MyComment_fragment extends Fragment {
         pAdapter = new Profile_MyComment_Adapter(pData);
         rv_MyComment.setAdapter(pAdapter);
         rv_MyComment.setLayoutManager(new LinearLayoutManager(context));
-
         addItem("정수영","카페의 숲","서울시 마포구 성산동","정말 맛있어요! 빵이 아주 촉촉해요","이거 사기입니다; 가니까 빵 바삭해요","2020-06-19 (11:28)",R.drawable.cafe_image);
         addItem("정수영","카페의 숲","서울시 마포구 성산동","정말 맛있어요! 빵이 아주 촉촉해요 가격도 싸고 괜찮습니다\n\n\n.","이거 사기입니다; 가니까 빵 바삭해요 가격도 비싸구요 ;; 완전 돈만 날렸네","2020-06-19 (11:28)",R.drawable.cafe_image);
-
         pAdapter.notifyDataSetChanged();
     }
 
