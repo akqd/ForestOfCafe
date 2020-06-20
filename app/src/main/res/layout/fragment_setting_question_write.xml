@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="제목 : "
+        android:textSize="20sp"
+        android:textColor="@color/colorBrown"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tv_title"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        android:ems="13"
+        android:hint="제목을 입력하세요"
+        android:padding="5dp"
+        android:background="@drawable/standardborder"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:text="내용 : "
+        android:textSize="20sp"
+        android:textColor="@color/colorBrown"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/et_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_value"
+        android:ems="13"
+        android:padding="1dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="top"
+        android:height="400dp"
+        android:hint="내용을 입력하세요"
+        android:background="@drawable/standardborder"
+        />
+
+    <TextView
+        android:id="@+id/tv_image"
+        android:text="사진 : "
+        android:textSize="20sp"
+        android:textColor="@color/colorBrown"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_value"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="10dp"
+   />
+
+
+    <EditText
+        android:id="@+id/et_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintLeft_toRightOf="@id/tv_image"
+        app:layout_constraintTop_toTopOf="@id/addImgBtn"
+        app:layout_constraintBottom_toBottomOf="@id/addImgBtn"
+        android:background="@drawable/standardborder"
+        android:padding="5dp"
+        />
+
+    <Button
+        android:id="@+id/addImgBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="첨부"
+        android:textColor="@color/colorIvory"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/et_image"
+        app:layout_constraintTop_toTopOf="@id/tv_image"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="등록"
+        android:textColor="@color/colorIvory"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/addImgBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@id/addImgBtn"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,7 +50,6 @@ public class Setting_fragment extends Fragment {
             public void onClick(View v) {
                 ((MainActivity)getActivity()).replaceFragment(Profile_Edit_fragment.newInstance(),null);
 
-
             }
         } );
             listv_setting_menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -58,15 +57,24 @@ public class Setting_fragment extends Fragment {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     switch (position){
                         case 0 : {
+                            ((MainActivity)getActivity()).replaceFragment(Setting_notice_fragment.newInstance(),null);
+
                             break;
                         }
                         case 1 :  {
+                            ((MainActivity)getActivity()).replaceFragment(Setting_question_fragment.newInstance(),null);
+
                             break;
                         }
                         case 2 :  {
+                            ((MainActivity)getActivity()).replaceFragment(Setting_version_fragment.newInstance(),null);
+
                             break;
                         }
                         case 3 :  {
+                            ((MainActivity)getActivity()).replaceFragment(Setting_exit_fragment.newInstance(),null);
+
+
                             break;
                         }
                     }
