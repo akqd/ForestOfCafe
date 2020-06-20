@@ -55,6 +55,8 @@ public void onActivityCreated (@Nullable Bundle savedInstanceState){
                         break;
                     }
                     case 1: {
+                        ((MainActivity) context).replaceFragment(Setting_MyQuestion_fragment.newInstance(), null);
+
                         break;
                     }
                 }
