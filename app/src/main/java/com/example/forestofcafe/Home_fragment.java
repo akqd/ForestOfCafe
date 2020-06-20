@@ -14,14 +14,10 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,30 +31,25 @@ public class Home_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
     View v;
-    TextView tvCafeListMore;
+    TextView tvCafeListMore, tvFavoriteCafeMore;
     RecyclerView rv_MainCafeList, comm_recyclerView, fv_recyclerView;
     RecyclerView.LayoutManager layoutManager , fv_layoutManeger;
     MainCafeList_Adapter mAdapter;
     private ArrayList<MainCafeList_Item> mData = new ArrayList<MainCafeList_Item>();
     MainFavorite_Adapter fAdapter;
     private  ArrayList<MainFavorite_Item> fData = new ArrayList<MainFavorite_Item>();
-    TextView comm_more;
-    BottomNavigationView bottomNavigationView;
 
     
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
-        bottomNavigationView = getActivity().findViewById(R.id.navigation_bottom);
         tvCafeListMore = getActivity().findViewById(R.id.tvMore);
         rv_MainCafeList = getActivity().findViewById(R.id.rv_MainCafeList);
         layoutManager = new LinearLayoutManager(context);
         rv_MainCafeList.setLayoutManager(layoutManager);
         mAdapter = new MainCafeList_Adapter(mData);
         rv_MainCafeList.setAdapter(mAdapter);
-        mData.clear();
-        mAdapter.notifyDataSetChanged();
         tvCafeListMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +59,10 @@ public class Home_fragment extends Fragment {
         addCafeListItem("카페이름1", "50m", "OPEN", getResources().getDrawable(R.drawable.cafe1, null));
         addCafeListItem("카페이름2", "100m", "CLOSE", getResources().getDrawable(R.drawable.cafe2, null));
         addCafeListItem("카페이름3", "200m", "OPEN", getResources().getDrawable(R.drawable.cafe3, null));
+
+
+
+
         mAdapter.notifyDataSetChanged();
         //메인 화면 - 즐겨찾는 카페 리스트
         fv_recyclerView = getActivity().findViewById(R.id.fv_recyclerView);
@@ -75,11 +70,22 @@ public class Home_fragment extends Fragment {
         fv_recyclerView.setLayoutManager(fv_layoutManeger);
         fAdapter = new MainFavorite_Adapter(fData);
         fv_recyclerView.setAdapter(fAdapter);
-        fData.clear();
-        fAdapter.notifyDataSetChanged();
+        tvFavoriteCafeMore = getActivity().findViewById(R.id.fv_more);
+
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_thelight_1,null),"카페 빛","오늘은 정상 영업 합니다.","OPEN");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","오늘은 오후부터 영업 시작합니다.","CLOSE");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","오늘은 영업 쉽니다.","CLOSE");
+
+
+        tvFavoriteCafeMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).replaceFragment(Favorite_fragment.newInstance(),null);
+            }
+        });
+
+
+
 
         //메인커뮤니티화면에 대한 코드 추가(김준희)
         comm_recyclerView = getActivity().findViewById(R.id.comm_recyclerView);
@@ -96,17 +102,6 @@ public class Home_fragment extends Fragment {
         MainCommunity_Adapter comm_adapter = new MainCommunity_Adapter(community_itemList);
         comm_adapter.notifyDataSetChanged();
         comm_recyclerView.setAdapter(comm_adapter);
-
-        comm_more = getActivity().findViewById(R.id.comm_more);
-        comm_more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity)context).replaceFragment(Community_fragment.newInstance(),null);
-                bottomNavigationView.setSelectedItemId(R.id.bottom_community);
-
-
-            }
-        });
     }
 
     public void addCafeListItem(String cafe_name, String cafe_distance, String cafe_openclose, Drawable cafe_image) {
@@ -154,5 +149,4 @@ public class Home_fragment extends Fragment {
     public static Home_fragment newInstance() {
         return new Home_fragment();
     }
-
 }
