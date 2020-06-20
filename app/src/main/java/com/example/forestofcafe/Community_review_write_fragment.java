@@ -62,4 +62,6 @@ public class Community_review_write_fragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_write_review,container,false);
     }
+
+    public static Community_review_write_fragment newInstance(){return new Community_review_write_fragment();}
 }

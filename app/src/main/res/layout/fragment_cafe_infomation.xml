@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:map="http://schemas.android.com/tools">
 
     <ImageView
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
         android:id="@+id/imgMain"
         android:layout_width="375dp"
         android:layout_height="240dp"
@@ -13,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:scaleType="fitXY"
         android:id="@+id/img1"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -22,6 +27,7 @@
         app:layout_constraintTop_toBottomOf="@id/imgMain" />
 
     <ImageView
+        android:scaleType="fitXY"
         android:id="@+id/img2"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -31,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/imgMain" />
 
     <ImageView
+        android:scaleType="fitXY"
         android:id="@+id/img3"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -40,6 +47,7 @@
         app:layout_constraintTop_toBottomOf="@id/imgMain" />
 
     <ImageButton
+        android:scaleType="fitXY"
         android:id="@+id/imgMore"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -49,14 +57,271 @@
         app:layout_constraintTop_toBottomOf="@id/imgMain" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/info_layout1"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorIvory"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgMore">
 
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/colorBrown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카페이름"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/info_cafe_name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/info_cafe_name"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7.5dp"
+            android:id="@+id/info_score"
+            android:text="(점수)"
+            android:textSize="15sp"
+            android:textColor="@color/colorBrown"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/info_score"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/into_review_num"
+            android:text="평가갯수"
+            android:textSize="15sp"
+            android:textColor="@color/colorWeakBrown"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7.5dp"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_distance"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="거리m"
+            android:textColor="@color/colorBrown"/>
+
+        <ImageView
+            android:id="@+id/icon_address"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toBottomOf="@id/info_cafe_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_location"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_cafe_address"
+            app:layout_constraintLeft_toRightOf="@id/icon_address"
+            app:layout_constraintTop_toBottomOf="@id/info_cafe_name"
+            android:text="카페주소"
+            android:textColor="@color/colorBrown"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_cafe_address"
+            android:id="@+id/info_hashtag"
+            android:textColor="@color/colorBrown"
+            android:text="#해시태그"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/standard_info"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_hashtag"
+            android:textSize="20sp"
+            android:text="기본정보"
+            android:textColor="@color/colorBrown"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_tv_standard_info"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/standard_info"
+            android:text="영업시간: \n 전화번호:"
+            android:textColor="@color/colorBrown"/>
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_menuinfomation"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_hashtag"
+            android:text="메뉴정보"
+            android:textSize="15sp"
+            android:textColor="@color/colorBrown"
+            android:clickable="true"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_notice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_tv_standard_info"
+            android:text="공지사항"
+            android:textSize="20sp"
+            android:textColor="@color/colorBrown"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_tv_notice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_notice"
+            android:text="카페공지사항: "
+            android:textColor="@color/colorBrown"/>
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_open_close"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_tv_standard_info"
+            android:layout_marginTop="20dp"
+            android:text="운영중/운영중아님"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/colorBrown"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_more"
+            android:text="더보기▼"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_tv_notice"
+            android:textColor="@color/colorBrown"
+            android:textSize="15sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/info_layout1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/info_layout2"
+        android:background="@color/colorIvory">
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_moreinfo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="상세정보"
+            android:textSize="20sp"
+            android:textColor="@color/colorBrown"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info_tv_moreinfo"
+            app:layout_constraintTop_toBottomOf="@id/info_moreinfo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/colorBrown"
+            android:text="좌석수: \n 콘센트수: \n 애견동반: \n 노키즈존: \n Wi-Fi: \n 주차공간: \n 테라스:"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_way_to_come"
+        app:layout_constraintTop_toBottomOf="@id/info_layout2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="오시는 길"
+        android:textSize="20sp"
+        android:textColor="@color/colorBrown"/>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/info_map"
+        class="com.google.android.gms.maps.MapFragment"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_way_to_come"
+        map:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_community"
+        app:layout_constraintTop_toBottomOf="@id/info_map"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="커뮤니티"
+        android:textSize="20sp"
+        android:textColor="@color/colorBrown"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_write_review"
+        app:layout_constraintTop_toBottomOf="@id/info_map"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="45dp"
+        android:text="글쓰기"
+        android:textSize="15sp"
+        android:textColor="@color/colorBrown"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/info_comm_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_community" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

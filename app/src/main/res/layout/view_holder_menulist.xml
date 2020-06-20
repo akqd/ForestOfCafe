@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/menu_image"/>
+    
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        app:layout_constraintLeft_toRightOf="@id/menu_image"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="메뉴이름"
+        android:id="@+id/menu_name"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/colorBrown"/>
+
+    <TextView
+        android:textColor="@color/colorBrown"
+        android:id="@+id/menu_price"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:gravity="center_vertical|left"
+        android:text="가격"
+        app:layout_constraintLeft_toRightOf="@id/menu_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorWeakBrown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_name"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
