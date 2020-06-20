@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
     Setting_fragment setting_fragment = new Setting_fragment();
     BottomNavigationView bottomNavigationView;
     NestedScrollView sv_main;
+    public static Context sContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sContext = this;
         toolbar = findViewById(R.id.toolbar); // 툴바 생성
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
         ActionBar actionBar = getSupportActionBar();
@@ -68,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                         sv_main.scrollTo(0,0);
                         transaction.replace(R.id.sv_main, community_fragment);
                         break;
-
                     }
                     case R.id.bottom_favorite: {
                         sv_main.scrollTo(0,0);
@@ -121,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.sv_main, fragment,tag);
         transaction.addToBackStack(null);
-        transaction.commit();
+        transaction.commitAllowingStateLoss();
     }
     @Override
     public void onBackPressed() {

@@ -73,8 +73,6 @@ public class Setting_fragment extends Fragment {
                         }
                         case 3 :  {
                             ((MainActivity)getActivity()).replaceFragment(Setting_exit_fragment.newInstance(),null);
-
-
                             break;
                         }
                     }

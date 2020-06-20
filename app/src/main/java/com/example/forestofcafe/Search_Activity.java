@@ -27,22 +27,24 @@ public class Search_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         act_search = findViewById(R.id.act_search);
+        act_search.setText("디저트");
         rv_searchResult = findViewById(R.id.rv_searchResult);
         chip1 = findViewById(R.id.chip1);
         sAdapter = new SearchResult_Adapter(sData);
         sAdapter.setOnItemClickListener(new SearchResult_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int postion) {
-                Toast.makeText(getApplicationContext(),postion + "아이템 선택됨",Toast.LENGTH_SHORT).show();
+                finish();
+                ((MainActivity)MainActivity.sContext).replaceFragment(Cafe_infomation_fragment.newInstance(),null);
             }
         });
         rv_searchResult.setAdapter(sAdapter);
         rv_searchResult.setLayoutManager(new LinearLayoutManager(this));
-        addItem(getDrawable(R.drawable.cafe_image),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
-        addItem(getDrawable(R.drawable.cafe1),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
-        addItem(getDrawable(R.drawable.cafe2),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
-        addItem(getDrawable(R.drawable.cafe3),"CLOSE","카페4","카페4주소","#대충 #만듬","650km");
-        addItem(getDrawable(R.drawable.cafe4),"OPEN","카페5","카페5주소","#대충 #만듬","750km");
+        addItem(getDrawable(R.drawable.cafe_ttobagi_1), "OPEN", "또바기", "서울 서대문구 명지대길 108", "#디저트 #와플, #분위기 좋은", "180m");
+        addItem(getDrawable(R.drawable.cafe_sweatfilling_1), "CLOSE", "달콤충전소", "서울 서대문구 거북골로 6", "#디저트 #마카롱", "390m");
+        addItem(getDrawable(R.drawable.cafe_pongshin_1), "CLOSE", "퐁신수플레", "서울 서대문구 거북골로 31-1", "#디저트 #수플레, #테라스", "580m");
+        addItem(getDrawable(R.drawable.cafe_timedifference_1), "OPEN", "시차", "서울 서대문구 증가로 10길 16-20", "#디저트 #수제펑리수", "780m");
+        addItem(getDrawable(R.drawable.cafe_onthepalette_1),"OPEN","온더팔레트", "서울 은평구 응암로 14실 17", "#디저트, #와플, #느낌있는","780m");
         sAdapter.notifyDataSetChanged();
 
     }

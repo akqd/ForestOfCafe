@@ -32,8 +32,15 @@ public class Profile_MyPost_fragment extends Fragment {
         pAdapter = new Profile_MyPost_Adapter(pData);
         rv_MyPost.setAdapter(pAdapter);
         rv_MyPost.setLayoutManager(new LinearLayoutManager(context));
-        addItem("카페의 숲","서울시 마포구 성산동","빵이 참 맛있네요","21","14","2020-06-19 (11:28)",R.drawable.cafe_image);
+        pData.clear();
+        addItem("또바기","서울시 서대문구 홍은동","고급스럽고 분위기있는 카페였어요","11","7","2020-05-11 (08:28:42)",R.drawable.cafe_ttobagi_1);
         pAdapter.notifyDataSetChanged();
+        pAdapter.setOnItemClickListener(new Profile_MyPost_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int postion) {
+                ((MainActivity)context).replaceFragment(Community_post_fragment.newInstance(),null);
+            }
+        });
     }
 
     public void onDestroyView() { // 화면에서 사라질때 프래그먼트의 뷰 삭제

@@ -18,6 +18,7 @@ import java.util.List;
 public class Profile_MyPost_Adapter extends RecyclerView.Adapter<Profile_MyPost_Adapter.ViewHolder> {
     ArrayList<Profile_MyPost_Item> data = null;
     Context context;
+    OnItemClickListener mListner;
 
     public Profile_MyPost_Adapter(ArrayList<Profile_MyPost_Item> list) {
         data = list;
@@ -71,6 +72,18 @@ public class Profile_MyPost_Adapter extends RecyclerView.Adapter<Profile_MyPost_
             btn_mypost_Delete.setText("삭제");
             imgv_mypost_favorite.setImageResource(R.drawable.ic_heart);
             imgv_mypost_comment.setImageResource(R.drawable.ic_comment);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        Profile_MyPost_Item item = data.get(pos);
+                        if (mListner != null) {
+                            mListner.onItemClick(v, pos);
+                        }
+                    }
+                }
+            });
             btn_mypost_Modify.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -115,5 +128,12 @@ public class Profile_MyPost_Adapter extends RecyclerView.Adapter<Profile_MyPost_
             });
 
         }
+    }
+    public interface OnItemClickListener {
+        void onItemClick(View v, int postion);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListner = listener;
     }
 }
