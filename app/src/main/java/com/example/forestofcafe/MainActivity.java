@@ -40,10 +40,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-        //startActivity(intent);
-        //overridePendingTransition(R.anim.fadeout,R.anim.fadein);
-
+        Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+        startActivity(intent);
         Log.d("touch", "작동하네요");
         toolbar = findViewById(R.id.toolbar); // 툴바 생성
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
@@ -61,27 +59,30 @@ public class MainActivity extends AppCompatActivity {
                 transaction = fragmentManager.beginTransaction();
                 switch (menuItem.getItemId()) {
                     case R.id.bottom_community: {
+                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, community_fragment, "community");
                         break;
                     }
                     case R.id.bottom_favorite: {
+                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, favorite_fragment, "favorite");
                         break;
                     }
                     case R.id.bottom_home: {
+                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, home_fragment, "home");
                         break;
                     }
                     case R.id.bottom_profile: {
+                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, profile_fragment, "profile");
                         break;
                     }
                     case R.id.bottom_setting: {
+                        fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, setting_fragment, "setting");
-
                         break;
                     }
-
                 }
                 transaction.commit();
                 return true;

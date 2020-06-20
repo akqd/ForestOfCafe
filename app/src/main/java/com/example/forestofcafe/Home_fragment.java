@@ -14,12 +14,12 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,18 +43,19 @@ public class Home_fragment extends Fragment {
     TextView comm_more;
     BottomNavigationView bottomNavigationView;
 
-    
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
+        bottomNavigationView = getActivity().findViewById(R.id.navigation_bottom);
         tvCafeListMore = getActivity().findViewById(R.id.tvMore);
         rv_MainCafeList = getActivity().findViewById(R.id.rv_MainCafeList);
         layoutManager = new LinearLayoutManager(context);
         rv_MainCafeList.setLayoutManager(layoutManager);
         mAdapter = new MainCafeList_Adapter(mData);
         rv_MainCafeList.setAdapter(mAdapter);
-        bottomNavigationView = getActivity().findViewById(R.id.navigation_bottom);
+        mData.clear();
+        mAdapter.notifyDataSetChanged();
         tvCafeListMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,8 +113,9 @@ public class Home_fragment extends Fragment {
         comm_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).replaceFragment(Community_fragment.newInstance(),null);
+                ((MainActivity)context).replaceFragment(Community_fragment.newInstance(),null);
                 bottomNavigationView.setSelectedItemId(R.id.bottom_community);
+
 
             }
         });
@@ -164,4 +166,5 @@ public class Home_fragment extends Fragment {
     public static Home_fragment newInstance() {
         return new Home_fragment();
     }
+
 }
