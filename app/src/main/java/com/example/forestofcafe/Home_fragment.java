@@ -1,34 +1,38 @@
 package com.example.forestofcafe;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 
-public class Home_fragment extends Fragment {
+public class Home_fragment extends Fragment implements OnMapReadyCallback {
     Context context;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -44,11 +48,18 @@ public class Home_fragment extends Fragment {
     private  ArrayList<MainFavorite_Item> fData = new ArrayList<MainFavorite_Item>();
     TextView comm_more;
     BottomNavigationView bottomNavigationView;
+    MapView mapView;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
+
+        mapView = v.findViewById(R.id.map);
+        mapView.onCreate(savedInstanceState);
+
+        mapView.getMapAsync((OnMapReadyCallback) this);
+
         bottomNavigationView = getActivity().findViewById(R.id.navigation_bottom);
         tvCafeListMore = getActivity().findViewById(R.id.tvMore);
         rv_MainCafeList = getActivity().findViewById(R.id.rv_MainCafeList);
@@ -83,6 +94,7 @@ public class Home_fragment extends Fragment {
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","오늘은 오후부터 영업 시작합니다.","CLOSE");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","오늘은 영업 쉽니다.","CLOSE");
 
+        fAdapter.notifyDataSetChanged();
 
         tvFavoriteCafeMore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,4 +177,30 @@ public class Home_fragment extends Fragment {
         return new Home_fragment();
     }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        MapsInitializer.initialize(this.getActivity());
+
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(37.584783, 126.925187), 15);
+        googleMap.animateCamera(cameraUpdate);
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.579316, 126.920239)).title("퐁신 수플레"));
+    }
+
+    @Override
+    public void onResume() {
+        mapView.onResume();
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
+    }
 }

@@ -16,9 +16,18 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.util.ArrayList;
 
-public class MainCafeList_fragment extends Fragment {
+public class MainCafeList_fragment extends Fragment implements OnMapReadyCallback {
 
     Context context;
     private static final String ARG_PARAM1 = "param1";
@@ -32,15 +41,26 @@ public class MainCafeList_fragment extends Fragment {
     SearchResult_Adapter mAdapter ;
     private ArrayList<SearchResult_Item> mData = new ArrayList<SearchResult_Item>();
 
+    MapView mapViewMore;
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
+
+        mapViewMore = v.findViewById(R.id.mapMore);
+        mapViewMore.onCreate(savedInstanceState);
+
+        mapViewMore.getMapAsync((OnMapReadyCallback) this);
+
         rv_MainCafeListMore = getActivity().findViewById(R.id.rv_MainCafeListMore);
         layoutManager = new LinearLayoutManager(context);
         rv_MainCafeListMore.setLayoutManager(layoutManager);
         mAdapter = new SearchResult_Adapter(mData);
         rv_MainCafeListMore.setAdapter(mAdapter);
+        mData.clear();
+        mAdapter.notifyDataSetChanged();
+
         addItem(getResources().getDrawable(R.drawable.cafe_image, null),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
         addItem(getResources().getDrawable(R.drawable.cafe1,null),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
         addItem(getResources().getDrawable(R.drawable.cafe2,null),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
@@ -83,5 +103,32 @@ public class MainCafeList_fragment extends Fragment {
 
     public static MainCafeList_fragment newInstance() {
         return new MainCafeList_fragment() ;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        MapsInitializer.initialize(this.getActivity());
+
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(37.584783, 126.925187), 15);
+        googleMap.animateCamera(cameraUpdate);
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.579316, 126.920239)).title("퐁신 수플레"));
+    }
+
+    @Override
+    public void onResume() {
+        mapViewMore.onResume();
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mapViewMore.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapViewMore.onLowMemory();
     }
 }
