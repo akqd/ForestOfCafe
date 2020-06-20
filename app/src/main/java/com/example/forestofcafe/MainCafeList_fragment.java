@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -40,6 +41,7 @@ public class MainCafeList_fragment extends Fragment implements OnMapReadyCallbac
     RecyclerView.LayoutManager layoutManager;
     SearchResult_Adapter mAdapter;
     private ArrayList<SearchResult_Item> mData = new ArrayList<SearchResult_Item>();
+    NestedScrollView sv_main;
 
     MapView mapViewMore;
 
@@ -52,6 +54,8 @@ public class MainCafeList_fragment extends Fragment implements OnMapReadyCallbac
         mapViewMore.onCreate(savedInstanceState);
 
         mapViewMore.getMapAsync((OnMapReadyCallback) this);
+
+        sv_main = getActivity().findViewById(R.id.sv_main);
 
         rv_MainCafeListMore = getActivity().findViewById(R.id.rv_MainCafeListMore);
         layoutManager = new LinearLayoutManager(context);
@@ -67,6 +71,15 @@ public class MainCafeList_fragment extends Fragment implements OnMapReadyCallbac
         addItem(getResources().getDrawable(R.drawable.cafe3, null), "CLOSE", "카페4", "카페4주소", "#대충 #만듬", "650km");
         addItem(getResources().getDrawable(R.drawable.cafe4, null), "OPEN", "카페5", "카페5주소", "#대충 #만듬", "750km");
         mAdapter.notifyDataSetChanged();
+
+        mAdapter.setOnItemClickListener(new SearchResult_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                ((MainActivity) context).replaceFragment(Cafe_infomation_fragment.newInstance(), null);
+                sv_main.scrollTo(0,0);
+                Toast.makeText(context, "카페 상세화면으로 이동", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void addItem(Drawable cafe_image, String op_cl, String title, String location, String keyword, String distance) {
