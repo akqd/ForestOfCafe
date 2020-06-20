@@ -27,11 +27,9 @@ public class Setting_exit_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             v = inflater.inflate(R.layout.fragment_setting_exit, container, false);
             return v;
-
         }
-
         @Override
-        public void onActivityCreated (@Nullable Bundle savedInstanceState){
+        public void onActivityCreated (@Nullable Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
             context = getActivity();
 
@@ -47,20 +45,17 @@ public class Setting_exit_fragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
-                    if(btn_point) {
+                    if (btn_point) {
                         tv.setText("탈퇴되었습니다.\n\n이용해주셔서\n감사합니다");
                         btn.setText("시작화면으로");
                         btn_point = false;
-                    }
-                    else{
-                            Intent intent = new Intent(context, StartActivity.class);
-                            startActivity(intent);
-
+                    } else {
+                        Intent intent = new Intent(context, StartActivity.class);
+                        startActivity(intent);
                     }
                 }
 
             });
-
         }
 
         public static Setting_exit_fragment newInstance() {
@@ -77,4 +72,3 @@ public class Setting_exit_fragment extends Fragment {
         }
 
     }
-
