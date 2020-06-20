@@ -7,6 +7,7 @@ import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -36,14 +37,21 @@ public class MainCafeList_fragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
         rv_MainCafeListMore = getActivity().findViewById(R.id.rv_MainCafeListMore);
-        layoutManager = new LinearLayoutManager(context);
-        mAdapter = new SearchResult_Adapter(mData);
         addItem(getResources().getDrawable(R.drawable.cafe_image, null),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
         addItem(getResources().getDrawable(R.drawable.cafe1,null),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
         addItem(getResources().getDrawable(R.drawable.cafe2,null),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
         addItem(getResources().getDrawable(R.drawable.cafe3,null),"CLOSE","카페4","카페4주소","#대충 #만듬","650km");
         addItem(getResources().getDrawable(R.drawable.cafe4,null),"OPEN","카페5","카페5주소","#대충 #만듬","750km");
+        mAdapter = new SearchResult_Adapter(mData);
         mAdapter.notifyDataSetChanged();
+        mAdapter.setOnItemClickListener(new SearchResult_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int postion) {
+                Toast.makeText(context,postion + "아이템 선택됨",Toast.LENGTH_SHORT).show();
+            }
+        });
+        rv_MainCafeListMore.setAdapter(mAdapter);
+        rv_MainCafeListMore.setLayoutManager(new LinearLayoutManager(context));
 
     }
 
@@ -57,8 +65,6 @@ public class MainCafeList_fragment extends Fragment {
         item.setCafe_distance(distance);
         mData.add(item);
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
