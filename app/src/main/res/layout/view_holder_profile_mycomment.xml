@@ -11,6 +11,7 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
         android:text="수정"
         android:textColor="@color/colorIvory"
         android:textSize="12sp"
@@ -20,13 +21,14 @@
     <Button
         android:id="@+id/btn_Delete"
         android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginRight="5dp"
         android:text="삭제"
         android:textColor="@color/colorIvory"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/btn_Modify"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_Modify" />
 
     <ImageView
         android:id="@+id/img_PostWriter"
@@ -40,109 +42,124 @@
 
     <ImageView
         android:id="@+id/img_CommunityPost"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginRight="5dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintBottom_toBottomOf="@id/tv_CommunityContent"
+        app:layout_constraintLeft_toLeftOf="@id/btn_Modify"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/img_PostWriter" />
 
     <ImageView
         android:id="@+id/img_CommentCount"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="5dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="2dp"
         android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_comment"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/tv_CommentContent"
-        app:layout_constraintTop_toBottomOf="@id/tv_CommunityContent" />
+        app:layout_constraintLeft_toLeftOf="@id/img_PostWriter"
+        app:layout_constraintTop_toBottomOf="@id/Line" />
 
     <TextView
         android:id="@+id/tv_PostWriter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="7dp"
         android:text="게시글 작성자"
         android:textColor="@color/colorBrown"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/img_PostWriter"
         app:layout_constraintLeft_toRightOf="@id/img_PostWriter"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/img_PostWriter" />
 
     <TextView
         android:id="@+id/tv_CafeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="2dp"
         android:text="카페이름"
         android:textColor="@color/colorBrown"
-        android:textSize="14sp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="@id/img_PostWriter"
         app:layout_constraintTop_toBottomOf="@id/img_PostWriter" />
 
     <TextView
         android:id="@+id/tv_CafeLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="2dp"
         android:layout_marginBottom="5dp"
         android:text="ㅇㅇ시 ㅇㅇ구 ㅇㅇ동"
         android:textColor="@color/colorBrown"
         android:textSize="10sp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/img_PostWriter"
         app:layout_constraintTop_toBottomOf="@id/tv_CafeName" />
 
     <TextView
         android:id="@+id/tv_CommunityContent"
-        android:layout_width="241dp"
-        android:layout_height="27dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="5dp"
+        android:maxLines="2"
         android:text="게시글 내용"
         android:textColor="@color/colorBrown"
         android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/img_PostWriter"
+        app:layout_constraintRight_toLeftOf="@id/img_CommunityPost"
         app:layout_constraintTop_toBottomOf="@id/tv_CafeLocation" />
 
     <TextView
         android:id="@+id/tv_CommentContent"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:maxLines="2"
         android:text="내 댓글 내용"
         android:textColor="@color/colorBrown"
-        android:textSize="10sp"
-        app:layout_constraintLeft_toRightOf="@id/img_CommentCount"
-        app:layout_constraintTop_toBottomOf="@id/tv_Comment" />
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/img_CommentCount"
+        app:layout_constraintRight_toLeftOf="@id/btn_Modify"
+        app:layout_constraintTop_toBottomOf="@id/img_CommentCount" />
+
     <TextView
         android:id="@+id/tv_Comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
         android:text="내 댓글"
         android:textColor="@color/colorBrown"
-        android:textSize="10sp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/img_CommentCount"
         app:layout_constraintLeft_toRightOf="@id/img_CommentCount"
-        app:layout_constraintTop_toBottomOf="@id/tv_CommunityContent" />
+        app:layout_constraintTop_toTopOf="@id/img_CommentCount" />
 
     <TextView
         android:id="@+id/tv_CommentWriteTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
         android:text="작성일시(시간)"
-        android:textColor="@color/colorBrown"
+        android:textColor="@color/colorWeakBrown"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@id/tv_Comment"
-        app:layout_constraintLeft_toRightOf="@id/tv_Comment"
-        />
+        app:layout_constraintLeft_toRightOf="@id/tv_Comment" />
 
+    <View
+        android:id="@+id/Line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#F1E3BF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_CommunityContent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

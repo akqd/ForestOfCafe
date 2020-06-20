@@ -46,7 +46,7 @@ public class Profile_MyComment_Adapter extends RecyclerView.Adapter<Profile_MyCo
     class ViewHolder extends RecyclerView.ViewHolder{
         Button btn_Modify, btn_Delete;
         ImageView img_PostWriter,img_CommunityPost,img_CommentCount;
-        TextView tv_PostWriter, tv_CafeName, tv_CafeLocation,tv_CommunityContent, tv_CommentContent,tv_CommentWriteTime;
+        TextView tv_PostWriter, tv_CafeName, tv_CafeLocation,tv_CommunityContent, tv_CommentContent,tv_CommentWriteTime,tv_Coment;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             btn_Modify = itemView.findViewById(R.id.btn_Modify);
@@ -54,12 +54,14 @@ public class Profile_MyComment_Adapter extends RecyclerView.Adapter<Profile_MyCo
             img_PostWriter = itemView.findViewById(R.id.img_PostWriter);
             img_CommunityPost = itemView.findViewById(R.id.img_CommunityPost);
             img_CommentCount = itemView.findViewById(R.id.img_CommentCount);
+            tv_Coment = itemView.findViewById(R.id.tv_Comment);
             tv_PostWriter = itemView.findViewById(R.id.tv_PostWriter);
             tv_CafeName = itemView.findViewById(R.id.tv_CafeName);
             tv_CafeLocation = itemView.findViewById(R.id.tv_CafeLocation);
             tv_CommentContent = itemView.findViewById(R.id.tv_CommentContent);
             tv_CommunityContent = itemView.findViewById(R.id.tv_CommunityContent);
             tv_CommentWriteTime = itemView.findViewById(R.id.tv_CommentWriteTime);
+            tv_Coment.setText("내 댓글");
             btn_Delete.setText("삭제");
             btn_Modify.setText("수정");
             img_CommentCount.setImageResource(R.drawable.ic_comment);

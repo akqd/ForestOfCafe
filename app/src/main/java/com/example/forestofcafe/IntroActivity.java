@@ -23,4 +23,11 @@ public class IntroActivity extends AppCompatActivity {
             }
         }, 2500);
     }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        System.runFinalization();
+        System.exit(0);
+    }
 }

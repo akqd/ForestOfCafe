@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -128,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
             long tempTime = System.currentTimeMillis();
             long intervalTime = tempTime - backPressedTime;
             if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime) {
-                super.onBackPressed();
+                finishAffinity();
+                System.runFinalization();
+                System.exit(0);
             } else {
                 backPressedTime = tempTime;
                 Toast.makeText(this, "뒤로가기 버튼을 한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onBackPressed();
     }
-    public void updateBottomMenu() {
+/*    public void updateBottomMenu() {
         Fragment tag1 = fragmentManager.findFragmentByTag("profile");
         Fragment tag2 = fragmentManager.findFragmentByTag("favorite");
         if (tag1 != null && tag1.isVisible()) {
@@ -145,6 +148,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (tag2 != null && tag2.isVisible()) {
             bottomNavigationView.getMenu().findItem(R.id.bottom_favorite).setChecked(true);
         }
-    }
+    }*/
 }
 
