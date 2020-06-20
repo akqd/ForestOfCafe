@@ -125,9 +125,9 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         comm_recyclerView.setLayoutManager(comm_layoutManager);
 
         List<MainCommunity_Item> community_itemList = new ArrayList<>();
-        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe1,"커피돌이", "Be, Bridge", "넓어서 좋고 분위기가 시원시원해요~", "4.7", "10", "5"));
-        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe2, "커피순이", "Cafe청담", "정동극장 입장전에 한잔하기 좋아요~ 따뜻한 분위기라 힐링되네요~", "5.0", "18", "9"));
-        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe3, "조범석", "PS카페", "참치를 안파네", "1", "99", "99"));
+        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe_ttobagi_1, "카페돌이", "또바기", "고급스럽고 분위기있는 카페였어요. 메뉴도 많고 사장님이 친절해서 좋았어요! 커피도 맛있었고 디저트도 맛있었어요~", "5", "99", "99"));
+        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe_thelight_1,"김준희", "카페 빛", "분위기가 좋고 디저트가 맛있어요~", "4.7", "10", "5"));
+        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe_timedifference_1, "정명원", "카페 시차", "이 커피를 매일 마실 수 있다면 사회복무요원을 2년더 연장해도 될 정도로 커피가 맛있었습니다", "5", "99", "99"));
 
         MainCommunity_Adapter comm_adapter = new MainCommunity_Adapter(community_itemList);
         comm_adapter.notifyDataSetChanged();

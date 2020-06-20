@@ -44,10 +44,9 @@ public class Community_fragment extends Fragment {
         scdata.clear();
         scAdapter.notifyDataSetChanged();
 
-        addsubcommitem(getResources().getDrawable(R.drawable.cafe1), getResources().getDrawable(R.drawable.ic_profile), "김준희", "Be, Bridge", "강원도 영월군 김삿갓면 주문리 6-1", "카페가 넓고 엄청 고급지게 생겼어요. 거리가 멀다는게 좀 흠", "7", "11", (float) 4.7);
-        addsubcommitem(getResources().getDrawable(R.drawable.cafe2), getResources().getDrawable(R.drawable.ic_profile), "커피돌이", "Cafe청담", "서울특별시 청담동 선릉로 162길 51", "정동극장 기다리다 잠깐 들어왔는데 분위기 완전 좋아요~", "6", "14", (float) 4.5);
-        addsubcommitem(getResources().getDrawable(R.drawable.cafe3), getResources().getDrawable(R.drawable.ic_profile), "커피중독자", "PS카페", "서울특별시 신사동 도산대로 49길", "싱가포르 분위기 카페라고해서 와봤어요~ 이국적인 분위기가 엄청 좋네요", "11", "17", (float) 4.0);
-
+        addsubcommitem(getResources().getDrawable(R.drawable.cafe_ttobagi_1), getResources().getDrawable(R.drawable.ic_profile), "커피돌이", "또바기", "서울 서대문구 명지대길 108", "고급스럽고 분위기있는 카페였어요. 메뉴도 많고 사장님이 친절해서 좋았어요! 커피도 맛있었고 디저트도 맛있었어요~", "7", "11", (float) 4.7);
+        addsubcommitem(getResources().getDrawable(R.drawable.cafe_thelight_1), getResources().getDrawable(R.drawable.ic_profile), "김준희", "카페 빛", "서울 은평구 응암로 14길 26-1", "지나가다 쉴겸 잠깐 들어왔는데 분위기 완전 좋아요~", "6", "14", (float) 4.5);
+        addsubcommitem(getResources().getDrawable(R.drawable.cafe_timedifference_1), getResources().getDrawable(R.drawable.ic_profile), "커피중독자", "카페 시차", "서울 서대문구 증가로 10길 16-20", "사장님이 친절했고 커피향이 좋네요. 디저트는 안먹어봤는데 종류도 많아요.", "11", "17", (float) 4.0);
 
         scAdapter.notifyDataSetChanged();
         scAdapter.setOnItemClickListener(new SubCommunity_Adapter.OnItemClickListener() {
