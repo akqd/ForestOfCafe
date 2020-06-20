@@ -186,10 +186,10 @@ public class Cafe_infomation_fragment extends Fragment implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize(this.getActivity());
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(37.590624, 126.920749), 15);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(37.585232, 126.923075), 15);
         googleMap.animateCamera(cameraUpdate);
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.590624, 126.920749)).title("카페 빛").snippet("서울 은평구 응암로 14길 26-1"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.585232, 126.923075)).title("또바기").snippet("서울 서대문구 명지대길 108"));
     }
 
     @Override

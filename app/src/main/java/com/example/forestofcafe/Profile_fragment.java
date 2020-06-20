@@ -23,6 +23,8 @@ public class Profile_fragment extends Fragment {
     ArrayList<ProfileListView_Item> pList = new ArrayList<ProfileListView_Item>();
     View v ;
     ProfileListView_Adapter pAdapter = null;
+    Profile_CustomDialog dialog = null;
+
     @Override
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,7 +63,25 @@ public class Profile_fragment extends Fragment {
                         break;
                     }
                     case 3 :  {
+                        View.OnClickListener postiveListner = new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(context,"확인 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                                getActivity().finish();
+                                dialog.dismiss();
+                            }
+                        };
+                        View.OnClickListener negativeListner = new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(context,"취소 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        };
+                        dialog = new Profile_CustomDialog(context,"로그아웃 하시겠습니까?",postiveListner,negativeListner);
+                        dialog.show();
                         break;
+
                     }
                 }
             }

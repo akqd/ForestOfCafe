@@ -24,6 +24,7 @@ public class Setting_question_write_fragment  extends Fragment {
     private String mParam1;
     private String mParam2;
     View v;
+    Profile_CustomDialog dialog = null;
 
 
 
@@ -43,26 +44,23 @@ public class Setting_question_write_fragment  extends Fragment {
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder dlg = new AlertDialog.Builder(context);
-                dlg.setTitle("알림");
-                dlg.setMessage("문의사항을 등록하시겠습니까?");
-                dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                View.OnClickListener postiveListner = new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(context, "문의사항이 등록되었습니다.",Toast.LENGTH_SHORT).show();
+                    public void onClick(View v) {
+                        Toast.makeText(context,"문의가 접수되었습니다.",Toast.LENGTH_SHORT).show();
                         ((MainActivity)context).fragmentManager.popBackStackImmediate(null,((MainActivity) context).fragmentManager.POP_BACK_STACK_INCLUSIVE);
-
-
+                        dialog.dismiss();
                     }
-                });
-
-                dlg.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                };
+                View.OnClickListener negativeListner = new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(context,"등록하기 취소",Toast.LENGTH_SHORT).show();
+                    public void onClick(View v) {
+                        Toast.makeText(context,"취소 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
-                });
-                dlg.show();
+                };
+                dialog = new Profile_CustomDialog(context,"등록하시겠습니까?",postiveListner,negativeListner);
+                dialog.show();
             }
         });
     }
