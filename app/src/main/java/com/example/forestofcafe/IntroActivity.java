@@ -21,7 +21,7 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 2500);
+        }, 1500);
     }
     @Override
     public void onBackPressed() {

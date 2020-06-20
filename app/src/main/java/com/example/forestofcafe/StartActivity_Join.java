@@ -21,7 +21,7 @@ public class StartActivity_Join extends AppCompatActivity {
     ImageView imgProfile;
     EditText edtID, edtPassword,edtPasswordRepeat, edtNickName, edtName, edtPhoneNumber, edtArea, edtEmail;
     Button btnOverlapCheck, btnJoin;
-
+    Profile_CustomDialog dialog;
 
     private final int GET_GALLERY_IMAGE = 200;
 
@@ -67,19 +67,28 @@ public class StartActivity_Join extends AppCompatActivity {
         btnJoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder dlg = new AlertDialog.Builder(StartActivity_Join.this);
-                dlg.setTitle("회원가입");
-                dlg.setMessage("회원가입 하시겠습니까?");
-                dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                dialog = null;
+
+                View.OnClickListener postiveListner = new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(View v) {
+
                         Toast.makeText(getApplicationContext(),"회원가입을 축하드립니다! 로그인해볼까요?", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                         Intent intent = new Intent(getApplicationContext(), StartActivity_Login.class);
                         startActivity(intent);
+
                     }
-                });
-                dlg.setNegativeButton("취소", null);
-                dlg.show();
+                };
+                View.OnClickListener negativeListner = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(StartActivity_Join.this,"취소 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                };
+                dialog = new Profile_CustomDialog(StartActivity_Join.this,"회원가입을 하시겠습니까?",postiveListner,negativeListner);
+                dialog.show();
             }
         });
     }
