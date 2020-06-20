@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
                         transaction.replace(R.id.sv_main, home_fragment);
                         break;
+
                     }
                     case R.id.bottom_profile: {
                         sv_main.scrollTo(0,0);
