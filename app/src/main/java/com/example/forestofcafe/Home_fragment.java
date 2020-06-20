@@ -176,7 +176,6 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize(this.getActivity());
-
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(37.584783, 126.925187), 15);
         googleMap.animateCamera(cameraUpdate);
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);

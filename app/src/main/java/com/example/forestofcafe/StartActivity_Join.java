@@ -77,7 +77,6 @@ public class StartActivity_Join extends AppCompatActivity {
                         dialog.dismiss();
                         Intent intent = new Intent(getApplicationContext(), StartActivity_Login.class);
                         startActivity(intent);
-
                     }
                 };
                 View.OnClickListener negativeListner = new View.OnClickListener() {
