@@ -44,38 +44,46 @@ public class Home_fragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
-        tvCafeListMore = getActivity().findViewById(R.id.tvMore);
+
         rv_MainCafeList = getActivity().findViewById(R.id.rv_MainCafeList);
         layoutManager = new LinearLayoutManager(context);
         rv_MainCafeList.setLayoutManager(layoutManager);
         mAdapter = new MainCafeList_Adapter(mData);
         rv_MainCafeList.setAdapter(mAdapter);
-        tvCafeListMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity)getActivity()).replaceFragment(MainCafeList_fragment.newInstance(),null);
-            }
-        });
+        mData.clear();
+        mAdapter.notifyDataSetChanged();
+
+        tvCafeListMore = getActivity().findViewById(R.id.tvMore);
+
+
         addCafeListItem("카페이름1", "50m", "OPEN", getResources().getDrawable(R.drawable.cafe1, null));
         addCafeListItem("카페이름2", "100m", "CLOSE", getResources().getDrawable(R.drawable.cafe2, null));
         addCafeListItem("카페이름3", "200m", "OPEN", getResources().getDrawable(R.drawable.cafe3, null));
 
-
-
-
         mAdapter.notifyDataSetChanged();
+
+        tvCafeListMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)context).replaceFragment(MainCafeList_fragment.newInstance(),null);
+            }
+        });
+
         //메인 화면 - 즐겨찾는 카페 리스트
         fv_recyclerView = getActivity().findViewById(R.id.fv_recyclerView);
         fv_layoutManeger = new LinearLayoutManager(context);
         fv_recyclerView.setLayoutManager(fv_layoutManeger);
         fAdapter = new MainFavorite_Adapter(fData);
         fv_recyclerView.setAdapter(fAdapter);
+        fData.clear();
+        fAdapter.notifyDataSetChanged();
         tvFavoriteCafeMore = getActivity().findViewById(R.id.fv_more);
 
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_thelight_1,null),"카페 빛","오늘은 정상 영업 합니다.","OPEN");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","오늘은 오후부터 영업 시작합니다.","CLOSE");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","오늘은 영업 쉽니다.","CLOSE");
 
+        fAdapter.notifyDataSetChanged();
 
         tvFavoriteCafeMore.setOnClickListener(new View.OnClickListener() {
             @Override

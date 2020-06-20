@@ -15,6 +15,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+
 import java.util.ArrayList;
 
 public class MainCafeList_fragment extends Fragment {
@@ -26,6 +29,8 @@ public class MainCafeList_fragment extends Fragment {
     private String mParam2;
     View v;
 
+
+
     RecyclerView rv_MainCafeListMore;
     RecyclerView.LayoutManager layoutManager;
     SearchResult_Adapter mAdapter ;
@@ -35,9 +40,15 @@ public class MainCafeList_fragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
+
         rv_MainCafeListMore = getActivity().findViewById(R.id.rv_MainCafeListMore);
         layoutManager = new LinearLayoutManager(context);
+        rv_MainCafeListMore.setLayoutManager(layoutManager);
         mAdapter = new SearchResult_Adapter(mData);
+        rv_MainCafeListMore.setAdapter(mAdapter);
+        mData.clear();
+        mAdapter.notifyDataSetChanged();
+
         addItem(getResources().getDrawable(R.drawable.cafe_image, null),"OPEN","카페1","카페1주소","#대충 #만듬","350km");
         addItem(getResources().getDrawable(R.drawable.cafe1,null),"CLOSE","카페2","카페2주소","#대충 #만듬","450km");
         addItem(getResources().getDrawable(R.drawable.cafe2,null),"OPEN","카페3","카페3주소","#대충 #만듬","550km");
@@ -71,7 +82,7 @@ public class MainCafeList_fragment extends Fragment {
     }
 
     @Override
-    public void onDestroyView() { // 화면에서 라라질때 프래그먼트의 뷰 삭제
+    public void onDestroyView() { // 화면에서 사라질때 프래그먼트의 뷰 삭제
         super.onDestroyView();
         if (v != null) {
             ViewGroup parent = (ViewGroup) v.getParent();

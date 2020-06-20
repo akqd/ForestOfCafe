@@ -8,7 +8,7 @@
     //-------------------------------지도------------------------------------------------
 
     <fragment
-        android:id="@+id/map"
+        android:id="@+id/mapMore"
         class="com.google.android.gms.maps.MapFragment"
         android:layout_width="380dp"
         android:layout_height="300dp"
@@ -29,6 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/map" />
+        app:layout_constraintTop_toBottomOf="@id/mapMore"
+        android:layout_marginTop="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
