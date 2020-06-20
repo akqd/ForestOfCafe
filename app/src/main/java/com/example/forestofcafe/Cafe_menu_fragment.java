@@ -36,9 +36,12 @@ public class Cafe_menu_fragment extends Fragment {
         data.clear();
         adapter.notifyDataSetChanged();
 
-        addsubcommitem(getResources().getDrawable(R.drawable.coffee1),"아메리카노", "ICE: 3000\nHOT:2500");
-        addsubcommitem(getResources().getDrawable(R.drawable.coffee2),"비엔나 커피", "ICE:5000\nHOT:4500");
-        addsubcommitem(getResources().getDrawable(R.drawable.coffee3),"카페라떼", "4000");
+        addsubcommitem(getResources().getDrawable(R.drawable.ttobagi_menu_chococream),"★초코크림", "₩5,500");
+        addsubcommitem(getResources().getDrawable(R.drawable.ttobagi_menu_creamamericano),"크림아메리카노", "₩4,500");
+        addsubcommitem(getResources().getDrawable(R.drawable.ttobagi_menu_darkchococake),"꾸덕 다크초코", "₩4,000");
+        addsubcommitem(getResources().getDrawable(R.drawable.ttobagi_menu_earlgrey),"얼그레이", "₩5,500");
+        addsubcommitem(getResources().getDrawable(R.drawable.ttobagi_menu_lemonade),"레모네이드", "₩4,000");
+        addsubcommitem(getResources().getDrawable(R.drawable.coffee1),"아메리카노", "ICE: ₩4,000 \n\nHOT: ₩3,500");
 
 
         adapter.notifyDataSetChanged();

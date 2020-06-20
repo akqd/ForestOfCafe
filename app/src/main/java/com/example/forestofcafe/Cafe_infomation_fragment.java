@@ -80,20 +80,20 @@ public class Cafe_infomation_fragment extends Fragment implements OnMapReadyCall
         info_menu = getActivity().findViewById(R.id.info_menuinfomation);
         info_write_review = getActivity().findViewById(R.id.info_write_review);
 
-        main_img.setImageResource(R.drawable.cafe_thelight_1);
-        sub_img1.setImageResource(R.drawable.cafe_thelight_2);
-        sub_img2.setImageResource(R.drawable.cafe_thelight_3);
-        sub_img3.setImageResource(R.drawable.thelight_menu_all);
-        info_name.setText("카페 빛");
+        main_img.setImageResource(R.drawable.cafe_ttobagi_1);
+        sub_img1.setImageResource(R.drawable.cafe_ttobagi_2);
+        sub_img2.setImageResource(R.drawable.cafe_ttobagi_3);
+        sub_img3.setImageResource(R.drawable.cafe_ttobagi_4);
+        info_name.setText("또바기");
         info_score.setText("4.7");
         info_review_num.setText("45개의 평가");
-        info_distance.setText("100m");
-        info_address.setText("서울 은평구 응암로 14길 26-1");
-        info_hashtag.setText("#분위기 #은평구 #카페 빛");
-        info_standard_infomation.setText("운영시간: 월 ~ 토(오전 08:30분 ~ 오후 21:30분 까지)\n전화번호: 070-8784-1111");
+        info_distance.setText("180m");
+        info_address.setText("서울 서대문구 명지대길 108");
+        info_hashtag.setText("#디저트 #와플 #분위기 좋은");
+        info_standard_infomation.setText("운영시간: 월 ~ 금(오전 10:00분 ~ 오후 22:00분 까지)\n전화번호: 010-7600-2602");
         info_openclose.setText("운영중");
         info_notice.setText("7월12일부터 14일까지 휴가로 인해 휴점합니다!");
-        info_more_infomation.setText("좌석수: 보통\n콘센트 수: 보통\n노키즈존: 아님\n주차공간: 없음\n반려동물 출입: 가능\n야외 테라스: 있음\nWi-Fi: 있음");
+        info_more_infomation.setText("좌석수: 보통\n콘센트 수: 보통\n노키즈존: X\n주차공간: X\n반려동물 출입: X\n야외 테라스: X\nWi-Fi: O");
 
 
         more = getActivity().findViewById(R.id.info_more);
@@ -131,9 +131,9 @@ public class Cafe_infomation_fragment extends Fragment implements OnMapReadyCall
             }
         });
 
-        addsubcommitem(getResources().getDrawable(R.drawable.review1), getResources().getDrawable(R.drawable.ic_profile), "김준희", "카페 빛", "서울 은평구 응암로 14길 26-1", "분위기 진짜 대박이에요ㅋㅋㅋ 한번 와보세요", "7", "11", (float) 4.7);
-        addsubcommitem(getResources().getDrawable(R.drawable.review2), getResources().getDrawable(R.drawable.ic_profile), "블거지", "카페 빛", "서울 은평구 응암로 14길 26-1", "제가찾던 카페가 여기있었네요~", "6", "14", (float) 4.5);
-        addsubcommitem(getResources().getDrawable(R.drawable.review3), getResources().getDrawable(R.drawable.ic_profile), "커피중독자", "카페 빛", "서울 은평구 응암로 14길 26-1", "분위기때문이라도 와볼만하네요. 대신 커피는 조금 비싼편인듯", "11", "17", (float) 4.0);
+        addsubcommitem(getResources().getDrawable(R.drawable.review1), getResources().getDrawable(R.drawable.ic_profile), "김준희", "또바기", "서울 서대문구 명지대길 108", "분위기 진짜 대박이에요ㅋㅋㅋ 한번 와보세요", "7", "11", (float) 4.7);
+        addsubcommitem(getResources().getDrawable(R.drawable.review2), getResources().getDrawable(R.drawable.ic_profile), "블거지", "또바기", "서울 서대문구 명지대길 108", "제가찾던 카페가 여기있었네요~", "6", "14", (float) 4.5);
+        addsubcommitem(getResources().getDrawable(R.drawable.review3), getResources().getDrawable(R.drawable.ic_profile), "커피중독자", "또바기", "서울 서대문구 명지대길 108", "분위기때문이라도 와볼만하네요. 신기한 커피도 많고 맛도 나쁘지 않아요", "11", "17", (float) 4.0);
 
         Adapter.notifyDataSetChanged();
         Adapter.setOnItemClickListener(new SubCommunity_Adapter.OnItemClickListener() {

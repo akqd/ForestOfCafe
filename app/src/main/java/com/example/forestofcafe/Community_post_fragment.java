@@ -56,13 +56,13 @@ public class Community_post_fragment extends Fragment {
         btn_comment = getActivity().findViewById(R.id.btn_enroll_comment);
 
         //profile_img.setImageResource(R.drawable.프로필 이미지);
-        cafe_img.setImageResource(R.drawable.cafe_thelight_1);
+        cafe_img.setImageResource(R.drawable.cafe_ttobagi_1);
         writer_name.setText("카페돌이");
-        cafe_name.setText("카페 빛");
-        cafe_address.setText("서울 은평구 응암로 14길 26-1");
+        cafe_name.setText("또바기");
+        cafe_address.setText("서울 서대문구 명지대길 108");
         comment_num.setText("11");
         like_num.setText("7");
-        cafe_review.setText("고급스럽고 분위기있는 카페였어요. 메뉴도 많고 사장님이 친절해서 좋았어요! 커피도 맛있었고 빵도 맛있었어요~");
+        cafe_review.setText("고급스럽고 분위기있는 카페였어요. 메뉴도 많고 사장님이 친절해서 좋았어요! 커피도 맛있었고 디저트도 맛있었어요~");
         ratingBar.setRating((float)4.7);
 
         btn_comment.setOnClickListener(new View.OnClickListener() {

@@ -8,6 +8,8 @@
     <LinearLayout
         android:background="@drawable/favorite_cafe_border"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="2dp"
@@ -73,12 +75,11 @@
             //댓글수
 
             <RatingBar
-
+                android:layout_marginRight="25dp"
                 android:id="@+id/star_num"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="4dp"
                 android:isIndicator="true"
                 android:numStars="5"
@@ -159,15 +160,14 @@
 
         //카페사진을 보여줌
         <ImageView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:id="@+id/cafe_img"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/cafe1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.547"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -214,12 +214,13 @@
 
             <TextView
                 android:id="@+id/review"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginRight="10dp"
                 android:paddingTop="8dp"
                 android:text="카페에 대한 리뷰가 작성됨"
                 android:textColor="@color/colorBrown"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
