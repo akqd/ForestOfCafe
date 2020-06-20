@@ -9,6 +9,7 @@
         android:id="@+id/const_search"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginHorizontal="14dp"
         android:layout_marginVertical="10dp"
         android:background="@drawable/border_searchview"
         app:layout_constraintBottom_toTopOf="@id/sv_search"
@@ -16,38 +17,37 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread"
-        android:layout_marginHorizontal="14dp"
         app:layout_constraintVertical_weight="1">
 
         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
             android:id="@+id/act_search"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginBottom="2dp"
-            android:completionThreshold="2"
             android:layout_marginLeft="15dp"
-            android:imeOptions="actionSearch"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/img_search"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="parent"
+            android:layout_marginBottom="2dp"
             android:background="@null"
             android:backgroundTint="@color/colorBrown"
-            app:layout_constraintHorizontal_weight="7"/>
+            android:completionThreshold="2"
+            android:imeOptions="actionSearch"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="7"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/img_search"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_search"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
             android:src="@drawable/ic_search"
             android:tint="@color/colorBrown"
-            android:layout_marginRight="8dp"
-            app:layout_constraintLeft_toRightOf="@id/act_search"
-            app:layout_constraintTop_toTopOf="@id/act_search"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintBottom_toBottomOf="@id/act_search"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/act_search"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/act_search"
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -67,7 +67,7 @@
 
             <LinearLayout
                 android:id="@+id/linear_chip"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:gravity="center"
@@ -76,7 +76,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_hot">
 
                 <com.google.android.material.chip.ChipGroup
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -86,7 +86,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip1"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="디저트"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -94,7 +94,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip2"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="마카롱"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -102,7 +102,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip3"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="와플"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -110,7 +110,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip4"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="아포가토"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -118,7 +118,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip5"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="빅수플레"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -126,7 +126,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip6"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="테라스"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -134,7 +134,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip7"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="펑리수"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -142,7 +142,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip8"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="수제"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -150,7 +150,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip9"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="느낌있는"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -158,7 +158,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip10"
                         style="@style/Test_chip_style"
-                        android:text="따뜻한"
+                        android:text="티라미수"
                         app:chipBackgroundColor="@color/colorIvory"
                         app:chipIconVisible="false"
                         app:chipStrokeColor="@color/colorIvory" />
@@ -169,7 +169,7 @@
                 android:id="@+id/tv_hot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="최근 인기 키워드"
                 android:textColor="@color/colorBrown"
                 android:textStyle="bold"
@@ -180,11 +180,10 @@
                 android:id="@+id/tv_recent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="최근 검색"
-                android:textStyle="bold"
                 android:textColor="@color/colorBrown"
-
+                android:textStyle="bold"
                 app:layout_constraintRight_toRightOf="@id/guideline_right"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -193,6 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:text="검색 결과"
                 android:textColor="@color/colorBrown"
                 android:textStyle="bold"
@@ -226,6 +226,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
+                android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

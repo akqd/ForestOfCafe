@@ -1,5 +1,6 @@
 package com.example.forestofcafe;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ public class Profile_fragment extends Fragment {
     ListView listv_profile_menu;
     ArrayList<ProfileListView_Item> pList = new ArrayList<ProfileListView_Item>();
     View v ;
+    Profile_CustomDialog dialog = null;
     ProfileListView_Adapter pAdapter = null;
     Profile_CustomDialog dialog = null;
 
@@ -31,7 +33,6 @@ public class Profile_fragment extends Fragment {
          v = inflater.inflate(R.layout.fragment_menu_profile, container, false); // 레이아웃 반환해서 띄웁니다!
         return v;
     }
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -40,12 +41,12 @@ public class Profile_fragment extends Fragment {
         listv_profile_menu = getActivity().findViewById(R.id.listv_profile_menu);
         listv_profile_menu.setAdapter(pAdapter);
         pList.clear();
-        pAdapter.notifyDataSetChanged();
         addItem(R.drawable.ic_bottom_profile,"회원 정보 수정");
         addItem(R.drawable.ic_pencil,"내가 쓴 글");
         addItem(R.drawable.ic_comment,"댓글 단 글");
         addItem(R.drawable.ic_exit,"로그아웃");
         pAdapter.notifyDataSetChanged();
+
         listv_profile_menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

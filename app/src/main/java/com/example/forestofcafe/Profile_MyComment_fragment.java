@@ -34,9 +34,15 @@ public class Profile_MyComment_fragment extends Fragment {
         pAdapter = new Profile_MyComment_Adapter(pData);
         rv_MyComment.setAdapter(pAdapter);
         rv_MyComment.setLayoutManager(new LinearLayoutManager(context));
-        addItem("정수영","카페의 숲","서울시 마포구 성산동","정말 맛있어요! 빵이 아주 촉촉해요","이거 사기입니다; 가니까 빵 바삭해요","2020-06-19 (11:28)",R.drawable.cafe_image);
-        addItem("정수영","카페의 숲","서울시 마포구 성산동","정말 맛있어요! 빵이 아주 촉촉해요 가격도 싸고 괜찮습니다\n\n\n.","이거 사기입니다; 가니까 빵 바삭해요 가격도 비싸구요 ;; 완전 돈만 날렸네","2020-06-19 (11:28)",R.drawable.cafe_image);
+        pData.clear();
+        addItem("카페돌이","또바기","서울시 서대문구 홍은동","고급스럽고 분위기있는 카페였어요","항상 좋은 게시물 감사합니다","2020-05-11 (12:50:30)",R.drawable.cafe_ttobagi_1);
         pAdapter.notifyDataSetChanged();
+        pAdapter.setOnItemClickListener(new Profile_MyComment_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int postion) {
+                ((MainActivity)context).replaceFragment(Community_post_fragment.newInstance(),null);
+            }
+        });
     }
 
     public void onDestroyView() { // 화면에서 사라질때 프래그먼트의 뷰 삭제

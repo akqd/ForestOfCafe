@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class Profile_MyComment_Adapter extends RecyclerView.Adapter<Profile_MyComment_Adapter.ViewHolder> {
     ArrayList<Profile_MyComment_Item> data = null;
     Context context;
+    OnItemClickListener mListner;
 
     public Profile_MyComment_Adapter(ArrayList<Profile_MyComment_Item> list) {
         data = list;
@@ -70,6 +71,18 @@ public class Profile_MyComment_Adapter extends RecyclerView.Adapter<Profile_MyCo
             btn_Modify.setText("수정");
             img_CommentCount.setImageResource(R.drawable.ic_comment);
             img_PostWriter.setImageResource(R.drawable.ic_profile);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        Profile_MyComment_Item item = data.get(pos);
+                        if (mListner != null) {
+                            mListner.onItemClick(v, pos);
+                        }
+                    }
+                }
+            });
             btn_Modify.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -113,5 +126,12 @@ public class Profile_MyComment_Adapter extends RecyclerView.Adapter<Profile_MyCo
                 }
             });
         }
+    }
+    public interface OnItemClickListener {
+        void onItemClick(View v, int postion);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListner = listener;
     }
 }
