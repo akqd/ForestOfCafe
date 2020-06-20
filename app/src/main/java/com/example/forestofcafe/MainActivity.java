@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-        startActivity(intent);
         toolbar = findViewById(R.id.toolbar); // 툴바 생성
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
         ActionBar actionBar = getSupportActionBar();

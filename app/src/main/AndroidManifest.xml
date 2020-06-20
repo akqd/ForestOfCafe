@@ -31,17 +31,19 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB4EPpzqaR6r9uqVzzJGeBcAwotcVF9jGQ" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+
+        <activity
+            android:name=".Search_Activity"
+            android:windowSoftInputMode="adjustNothing"></activity>
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Search_Activity"
-            android:windowSoftInputMode="adjustNothing"></activity>
-        <activity android:name=".StartActivity" />
+
         <activity android:name=".StartActivity_Join" />
         <activity android:name=".StartActivity_Login" />
         <activity android:name=".StartActivity_Find" />
