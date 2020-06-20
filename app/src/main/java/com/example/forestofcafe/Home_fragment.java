@@ -73,9 +73,9 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
                 ((MainActivity) context).replaceFragment(MainCafeList_fragment.newInstance(), null);
             }
         });
-        addCafeListItem("카페이름1", "50m", "OPEN", getResources().getDrawable(R.drawable.cafe1, null));
-        addCafeListItem("카페이름2", "100m", "CLOSE", getResources().getDrawable(R.drawable.cafe2, null));
-        addCafeListItem("카페이름3", "200m", "OPEN", getResources().getDrawable(R.drawable.cafe3, null));
+        addCafeListItem("또바기", "180m", "OPEN", getResources().getDrawable(R.drawable.cafe_ttobagi_1, null));
+        addCafeListItem("달콤충전소", "390m", "CLOSE", getResources().getDrawable(R.drawable.cafe_sweatfilling_1, null));
+        addCafeListItem("하우디", "430m", "OPEN", getResources().getDrawable(R.drawable.cafe_howdy_1, null));
         mAdapter.notifyDataSetChanged();
         //메인 화면 - 즐겨찾는 카페 리스트
         fv_recyclerView = getActivity().findViewById(R.id.fv_recyclerView);

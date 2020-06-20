@@ -65,11 +65,11 @@ public class MainCafeList_fragment extends Fragment implements OnMapReadyCallbac
         mData.clear();
         mAdapter.notifyDataSetChanged();
 
-        addItem(getResources().getDrawable(R.drawable.cafe_image, null), "OPEN", "카페1", "카페1주소", "#대충 #만듬", "350km");
-        addItem(getResources().getDrawable(R.drawable.cafe1, null), "CLOSE", "카페2", "카페2주소", "#대충 #만듬", "450km");
-        addItem(getResources().getDrawable(R.drawable.cafe2, null), "OPEN", "카페3", "카페3주소", "#대충 #만듬", "550km");
-        addItem(getResources().getDrawable(R.drawable.cafe3, null), "CLOSE", "카페4", "카페4주소", "#대충 #만듬", "650km");
-        addItem(getResources().getDrawable(R.drawable.cafe4, null), "OPEN", "카페5", "카페5주소", "#대충 #만듬", "750km");
+        addItem(getResources().getDrawable(R.drawable.cafe_ttobagi_1, null), "OPEN", "또바기", "서울 서대문구 명지대길 108", "#대충 #만듬", "180m");
+        addItem(getResources().getDrawable(R.drawable.cafe_sweatfilling_1, null), "CLOSE", "달콤충전소", "서울 서대문구 거북골로 6", "#대충 #만듬", "390m");
+        addItem(getResources().getDrawable(R.drawable.cafe_howdy_1, null), "OPEN", "하우디", "서울 서대문구 명지대길 10 2층", "#대충 #만듬", "430m");
+        addItem(getResources().getDrawable(R.drawable.cafe_pongshin_1, null), "CLOSE", "퐁신수플레", "서울 서대문구 거북골로 31-1", "#대충 #만듬", "580m");
+        addItem(getResources().getDrawable(R.drawable.cafe_timedifference_1, null), "OPEN", "시차", "서울 서대문구 증가로 10길 16-20", "#대충 #만듬", "780m");
         mAdapter.notifyDataSetChanged();
 
         mAdapter.setOnItemClickListener(new SearchResult_Adapter.OnItemClickListener() {
