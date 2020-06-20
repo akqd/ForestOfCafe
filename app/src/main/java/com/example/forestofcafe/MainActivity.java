@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Community_fragment community_fragment = new Community_fragment();
     Setting_fragment setting_fragment = new Setting_fragment();
     BottomNavigationView bottomNavigationView;
+    NestedScrollView sv_main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Intent intent = new Intent(getApplicationContext(), StartActivity.class);
         startActivity(intent);
-        Log.d("touch", "작동하네요");
         toolbar = findViewById(R.id.toolbar); // 툴바 생성
         setSupportActionBar(toolbar); // 툴바 앱바로 사용
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("카페의 숲"); // 이름 바꿈
         // 뷰 인플레이팅
+        sv_main = findViewById(R.id.sv_main);
         bottomNavigationView = findViewById(R.id.navigation_bottom);
         transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.sv_main, home_fragment,"home").commit(); // 초기화면 세팅
@@ -59,28 +62,33 @@ public class MainActivity extends AppCompatActivity {
                 transaction = fragmentManager.beginTransaction();
                 switch (menuItem.getItemId()) {
                     case R.id.bottom_community: {
+                        sv_main.scrollTo(0,0);
                         fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
-                        transaction.replace(R.id.sv_main, community_fragment, "community");
+                        transaction.replace(R.id.sv_main, community_fragment);
                         break;
                     }
                     case R.id.bottom_favorite: {
+                        sv_main.scrollTo(0,0);
                         fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
-                        transaction.replace(R.id.sv_main, favorite_fragment, "favorite");
+                        transaction.replace(R.id.sv_main, favorite_fragment);
                         break;
                     }
                     case R.id.bottom_home: {
+                        sv_main.scrollTo(0,0);
                         fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
-                        transaction.replace(R.id.sv_main, home_fragment, "home");
+                        transaction.replace(R.id.sv_main, home_fragment);
                         break;
                     }
                     case R.id.bottom_profile: {
+                        sv_main.scrollTo(0,0);
                         fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
-                        transaction.replace(R.id.sv_main, profile_fragment, "profile");
+                        transaction.replace(R.id.sv_main, profile_fragment);
                         break;
                     }
                     case R.id.bottom_setting: {
+                        sv_main.scrollTo(0,0);
                         fragmentManager.popBackStackImmediate(null,fragmentManager.POP_BACK_STACK_INCLUSIVE);
-                        transaction.replace(R.id.sv_main, setting_fragment, "setting");
+                        transaction.replace(R.id.sv_main, setting_fragment);
                         break;
                     }
                 }

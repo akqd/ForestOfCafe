@@ -74,6 +74,8 @@ public class Home_fragment extends Fragment {
         fv_recyclerView.setLayoutManager(fv_layoutManeger);
         fAdapter = new MainFavorite_Adapter(fData);
         fv_recyclerView.setAdapter(fAdapter);
+        fData.clear();
+        fAdapter.notifyDataSetChanged();
         tvFavoriteCafeMore = getActivity().findViewById(R.id.fv_more);
         comm_more = getActivity().findViewById(R.id.comm_more);
 
@@ -85,7 +87,8 @@ public class Home_fragment extends Fragment {
         tvFavoriteCafeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).replaceFragment(Favorite_fragment.newInstance(), null);
+                ((MainActivity)context).replaceFragment(Favorite_fragment.newInstance(), null);
+                bottomNavigationView.setSelectedItemId(R.id.bottom_favorite);
             }
         });
 
@@ -95,7 +98,6 @@ public class Home_fragment extends Fragment {
         //메인커뮤니티화면에 대한 코드 추가(김준희)
         comm_recyclerView = getActivity().findViewById(R.id.comm_recyclerView);
         LinearLayoutManager comm_layoutManager = new LinearLayoutManager(context);
-
         comm_layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         comm_recyclerView.setLayoutManager(comm_layoutManager);
 
@@ -113,8 +115,6 @@ public class Home_fragment extends Fragment {
             public void onClick(View v) {
                 ((MainActivity)context).replaceFragment(Community_fragment.newInstance(),null);
                 bottomNavigationView.setSelectedItemId(R.id.bottom_community);
-
-
             }
         });
     }

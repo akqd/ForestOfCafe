@@ -70,14 +70,6 @@ public class Favorite_fragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static Favorite_fragment newInstance(String param1, String param2) {
-        Favorite_fragment fragment = new Favorite_fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
