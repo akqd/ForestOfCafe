@@ -45,8 +45,8 @@
 
     <ImageView
         android:id="@+id/imgv_mypost_comment"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="5dp"
         android:src="@drawable/ic_comment"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,16 +54,15 @@
 
     <ImageView
         android:id="@+id/imgv_mypost_favorite"
-        android:layout_width="26dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="5dp"
+        android:layout_width="27dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="8dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_heart"
-        android:tint="@color/colorRed"
+        android:tint="@color/colorHeart"
         app:layout_constraintBottom_toBottomOf="@id/imgv_mypost_comment"
         app:layout_constraintLeft_toRightOf="@id/tv_CommentCount"
         app:layout_constraintTop_toTopOf="@id/imgv_mypost_comment"
-
         />
 
     <TextView

@@ -46,7 +46,6 @@ public class Profile_fragment extends Fragment {
         addItem(R.drawable.ic_comment,"댓글 단 글");
         addItem(R.drawable.ic_exit,"로그아웃");
         pAdapter.notifyDataSetChanged();
-
         listv_profile_menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -94,7 +93,7 @@ public class Profile_fragment extends Fragment {
         item.setMenu_str(menu_str);
         pList.add(item);
     }
-    public void onDestroyView() { // 화면에서 라라질때 프래그먼트의 뷰 삭제
+    public void onDestroyView() {
         super.onDestroyView();
         if (v != null) {
             ViewGroup parent = (ViewGroup) v.getParent();
