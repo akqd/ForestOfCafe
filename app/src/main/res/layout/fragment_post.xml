@@ -19,12 +19,13 @@
         //작성자 사진
         <ImageButton
             android:id="@+id/Like_Button"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="18dp"
             android:padding="0dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_heart"
+            android:background="@null"
             app:layout_constraintEnd_toStartOf="@id/like_num"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,8 +33,8 @@
 
         <ImageButton
             android:id="@+id/Comment_button"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginTop="20dp"
             android:padding="0dp"
             android:paddingTop="15dp"
@@ -73,11 +74,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        //댓글버튼
+
         <TextView
             android:id="@+id/comment_num"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
             android:text="2"
             android:textAlignment="center"
@@ -85,20 +88,18 @@
             app:layout_constraintEnd_toStartOf="@+id/Like_Button"
             app:layout_constraintTop_toTopOf="parent" />
 
-        //댓글버튼
+        //카페이름
 
         <TextView
             android:id="@+id/like_num"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
             android:text="13"
             android:textColor="@color/colorBrown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        //카페이름
 
         <TextView
             android:id="@+id/cafe_name"
