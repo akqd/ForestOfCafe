@@ -45,10 +45,10 @@ public class Favorite_fragment extends Fragment {
         data.clear();
         adapter.notifyDataSetChanged();
 
-        addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","서울 서대문구 명지대길 108","010-7600-2602","오늘은 18시에 문 닫을 예정입니다.","OPEN");
+
+        addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","서울 서대문구 명지대길 108","010-7600-2602","오늘은 영업 쉽니다.","CLOSE");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_thelight_1,null),"카페 빛","서울 은평구 응암로 14길 26-1","070-8784-1111","오늘은 정상 영업 합니다.","OPEN");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","서울 서대문구 증가로 10길 16-20","010-3331-9085","오늘은 오후부터 영업 시작합니다.","CLOSE");
-
 
         adapter.notifyDataSetChanged();
         adapter.setOnItemClickListener(new FavoriteCafe_Adapter.OnItemClickListener() {

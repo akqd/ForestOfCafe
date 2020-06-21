@@ -1,6 +1,8 @@
 package com.example.forestofcafe;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -43,7 +46,17 @@ public void onActivityCreated (@Nullable Bundle savedInstanceState){
         arrayList = new ArrayList<>();
         arrayList.add("문의하기");
         arrayList.add("내 문의사항 보기");
-        ArrayAdapter Adapter = new ArrayAdapter<String>(getActivity(), simple_list_item_1,arrayList);
+        ArrayAdapter Adapter = new ArrayAdapter<String>(getActivity(),simple_list_item_1,arrayList){
+
+
+            public View getView(int position, View convertView, ViewGroup parent){
+
+                View view = super.getView(position, convertView, parent);
+                TextView tv = view.findViewById(android.R.id.text1);
+                tv.setTextColor(getResources().getColor(R.color.colorBrown));
+                return view;
+            }
+        };
         listV.setAdapter(Adapter);
 
         listV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
