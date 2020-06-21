@@ -48,6 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
+                android:layout_marginRight="5dp"
                 android:id="@+id/Comment_button"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
@@ -92,28 +93,30 @@
 
             //댓글버튼
 
+            //카페이름
+
             <TextView
                 android:id="@+id/comment_num"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
                 android:text="2"
                 android:textAlignment="center"
                 android:textColor="@color/colorBrown"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/Like_Button"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            //카페이름
-
             <TextView
                 android:id="@+id/like_num"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
                 android:text="13"
                 android:textColor="@color/colorBrown"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
