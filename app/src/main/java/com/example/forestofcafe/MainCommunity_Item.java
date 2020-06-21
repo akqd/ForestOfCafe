@@ -1,49 +1,43 @@
 package com.example.forestofcafe;
 
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class MainCommunity_Item {
-    private int profile, cafe_image;
-    String writer_name, cafe_name, cafe_review, score_num, comment_num, like_num;
+    private Drawable profile;
+    private Drawable cafe_img;
+    private String id;
+    private String cafe_name;
+    private String like_num;
+    private String comment_num;
+    private String score;
+    private String review;
 
-    public MainCommunity_Item(int profile, int cafe_image, String writer_name, String cafe_name, String cafe_review, String score_num, String comment_num, String like_num){
-        this.profile = profile;
-        this.cafe_image = cafe_image;
-        this.writer_name = writer_name;
-        this.cafe_name = cafe_name;
-        this.cafe_review = cafe_review;
-        this.score_num = score_num;
-        this.comment_num = comment_num;
-        this.like_num = like_num;
-    }
 
-    public int getProfile(){
-        return profile;
-    }
+    public Drawable getProfile() {return profile;}
+    public void setProfile(Drawable profile) {this.profile = profile;}
 
-    public int getCafe_image(){
-        return cafe_image;
-    }
+    public Drawable getCafe_Img() {return cafe_img;}
+    public void setCafe_Img(Drawable cafe_img) {this.cafe_img = cafe_img;}
 
-    public String getWriter_name(){
-        return writer_name;
-    }
+    public String getId() { return id; }
+    public void setId(String id){this.id = id;}
 
-    public String getCafe_name(){
-        return cafe_name;
-    }
+    public String getCafe_Name() { return cafe_name; }
+    public void setCafe_Name(String cafe_name){this.cafe_name = cafe_name;}
 
-    public String getCafe_review(){
-        return cafe_review;
-    }
+    public String getLike_Num() { return like_num; }
+    public void setLike_Num(String like_num){this.like_num = like_num;}
 
-    public String getScore_num(){
-        return score_num;
-    }
+    public String getComment_Num() { return comment_num; }
+    public void setComment_Num(String comment_num){this.comment_num = comment_num;}
 
-    public String getComment_num(){
-        return comment_num;
-    }
+    public String getScore() { return score; }
+    public void setScore(String score){this.score = score;}
 
-    public String getLike_num(){
-        return like_num;
-    }
+    public String getReview() { return review; }
+    public void setReview(String review){this.review = review;}
+
+
 }

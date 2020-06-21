@@ -41,14 +41,15 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
     private String mParam1;
     private String mParam2;
     View v;
-    TextView tvCafeListMore, tvFavoriteCafeMore;
+    TextView tvCafeListMore, tvFavoriteCafeMore, comm_more;
     RecyclerView rv_MainCafeList, comm_recyclerView, fv_recyclerView;
-    RecyclerView.LayoutManager layoutManager , fv_layoutManeger;
+    RecyclerView.LayoutManager layoutManager , fv_layoutManeger, comm_layoutManager;
     MainCafeList_Adapter mAdapter;
     private ArrayList<MainCafeList_Item> mData = new ArrayList<MainCafeList_Item>();
     MainFavorite_Adapter fAdapter;
     private  ArrayList<MainFavorite_Item> fData = new ArrayList<MainFavorite_Item>();
-    TextView comm_more;
+    MainCommunity_Adapter cAdapter;
+    private ArrayList<MainCommunity_Item> cData = new ArrayList<MainCommunity_Item>();
     BottomNavigationView bottomNavigationView;
     MapView mapView;
     NestedScrollView sv_main;
@@ -100,7 +101,6 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         fData.clear();
         fAdapter.notifyDataSetChanged();
         tvFavoriteCafeMore = getActivity().findViewById(R.id.fv_more);
-        comm_more = getActivity().findViewById(R.id.comm_more);
 
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_thelight_1,null),"카페 빛","오늘은 정상 영업 합니다.","OPEN");
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_timedifference_1,null),"카페 시차","오늘은 오후부터 영업 시작합니다.","CLOSE");
@@ -115,28 +115,34 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
             }
         });
 
-
-
-
         //메인커뮤니티화면에 대한 코드 추가(김준희)
         comm_recyclerView = getActivity().findViewById(R.id.comm_recyclerView);
-        LinearLayoutManager comm_layoutManager = new LinearLayoutManager(context);
-        comm_layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        comm_layoutManager = new LinearLayoutManager(context);
         comm_recyclerView.setLayoutManager(comm_layoutManager);
+        cAdapter = new MainCommunity_Adapter(cData);
+        comm_recyclerView.setAdapter(cAdapter);
+        cData.clear();
+        cAdapter.notifyDataSetChanged();
+        comm_more = getActivity().findViewById(R.id.comm_more);
 
-        List<MainCommunity_Item> community_itemList = new ArrayList<>();
-        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe_ttobagi_1, "카페돌이", "또바기", "고급스럽고 분위기있는 카페였어요. 메뉴도 많고 사장님이 친절해서 좋았어요! 커피도 맛있었고 디저트도 맛있었어요~", "5", "99", "99"));
-        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe_thelight_1,"김준희", "카페 빛", "분위기가 좋고 디저트가 맛있어요~", "4.7", "10", "5"));
-        community_itemList.add(new MainCommunity_Item(R.drawable.ic_profile, R.drawable.cafe_timedifference_1, "정명원", "카페 시차", "이 커피를 매일 마실 수 있다면 사회복무요원을 2년더 연장해도 될 정도로 커피가 맛있었습니다", "5", "99", "99"));
-
-        MainCommunity_Adapter comm_adapter = new MainCommunity_Adapter(community_itemList);
-        comm_adapter.notifyDataSetChanged();
-        comm_recyclerView.setAdapter(comm_adapter);
+        addMainCommunity(getResources().getDrawable(R.drawable.ic_profile,null), getResources().getDrawable(R.drawable.cafe_ttobagi_1,null), "카페돌이", "또바기", "7", "13", "5", "고급스럽고 분위기있는 카페였어요. 메뉴도 많고 사장님이 친절해서 좋았어요! 커피도 맛있었고 디저트도 맛있었어요~");
+        addMainCommunity(getResources().getDrawable(R.drawable.ic_profile,null), getResources().getDrawable(R.drawable.cafe_thelight_1,null), "김준희", "카페 빛", "6", "13", "4.5", "지나가다 쉴겸 잠깐 들어왔는데 분위기 완전 좋네요.");
+        addMainCommunity(getResources().getDrawable(R.drawable.ic_profile,null), getResources().getDrawable(R.drawable.cafe_timedifference_1,null), "커피중독자", "카페 시차", "11", "13", "4", "사장님이 친절했고 커피향이 좋네요. 디저트는 안먹어봤는데 종류도 많아요.");
 
         comm_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bottomNavigationView.setSelectedItemId(R.id.bottom_community);
+            }
+        });
+
+        cAdapter.notifyDataSetChanged();
+        cAdapter.setOnItemClickListener(new MainCommunity_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                ((MainActivity) context).replaceFragment(Community_post_fragment.newInstance(), null);
+                sv_main.scrollTo(0,0);
+                Toast.makeText(context, "작성글 자세히보기로 이동", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -159,6 +165,21 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         item.setCafe_open_close(cafe_open);
 
         fData.add(item);
+    }
+
+    public void addMainCommunity(Drawable profile, Drawable cafe_image, String id, String cafe_name , String comment_num, String like_num, String score, String review) {
+        MainCommunity_Item item = new MainCommunity_Item();
+
+        item.setProfile(profile);
+        item.setCafe_Img(cafe_image);
+        item.setId(id);
+        item.setCafe_Name(cafe_name);
+        item.setComment_Num(comment_num);
+        item.setLike_Num(like_num);
+        item.setScore(score);
+        item.setReview(review);
+
+        cData.add(item);
     }
 
     @Override
