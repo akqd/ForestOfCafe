@@ -19,13 +19,14 @@
 
     <ImageView
         android:id="@+id/near_icon"
-        android:layout_width="25dp"
+        android:layout_width="30dp"
         android:layout_height="25dp"
-        android:layout_marginTop="22dp"
         android:src="@drawable/ic_cafelist"
-        android:tint="@color/colorBrownAlpha"
+        android:tint="@color/colorBrown"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/map"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="@id/tvNeighborhoodCafe"
+        app:layout_constraintBottom_toBottomOf="@id/tvNeighborhoodCafe"
         android:layout_marginLeft="10dp"/>
 
     <TextView
@@ -36,6 +37,7 @@
         android:text="근처 카페"
         android:textColor="#713614"
         android:textSize="24sp"
+        android:layout_marginLeft="5dp"
         app:layout_constraintLeft_toRightOf="@id/near_icon"
         map:layout_constraintTop_toBottomOf="@id/map" />
 
@@ -75,6 +77,7 @@
         android:id="@+id/tv_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:text="즐겨찾기한 카페"
         android:textColor="@color/colorBrown"
         android:textSize="24sp"
@@ -102,18 +105,17 @@
         app:layout_constraintTop_toBottomOf="@id/fv_recyclerView" />
 
 
-    //-------------------------------메인 커뮤니티----------------------------------------
-
     <ImageView
         android:id="@+id/comm_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginTop="38dp"
         android:layout_marginLeft="10dp"
         android:src="@drawable/ic_main_community"
-        android:tint="@color/colorBrownAlpha"
+        android:tint="@color/colorBrown"
+        android:scaleType="fitXY"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fv_more" />
+        app:layout_constraintTop_toTopOf="@id/tv1"
+        app:layout_constraintBottom_toBottomOf="@id/tv1"/>
 
     <TextView
         android:id="@+id/tv1"
@@ -121,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="커뮤니티"
+        android:layout_marginLeft="8dp"
         android:textColor="@color/colorBrown"
         android:textSize="24sp"
         app:layout_constraintLeft_toRightOf="@id/comm_icon"
@@ -144,7 +147,6 @@
         android:clickable="true"
         android:text="더보기"
         android:textColor="@color/colorBrown"
-        android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/comm_recyclerView" />
 
