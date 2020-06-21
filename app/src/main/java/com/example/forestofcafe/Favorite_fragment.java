@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,11 +30,13 @@ public class Favorite_fragment extends Fragment {
     FavoriteCafe_Adapter adapter;
     private  ArrayList<FavoriteCafe_Item> data = new ArrayList<FavoriteCafe_Item>();
     RecyclerView.LayoutManager layoutManager;
+    NestedScrollView sv_main;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        context = getActivity();
+        sv_main = getActivity().findViewById(R.id.sv_main);
         recyclerView = getActivity().findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
@@ -46,6 +50,14 @@ public class Favorite_fragment extends Fragment {
         addMainFavorite(getResources().getDrawable(R.drawable.cafe_ttobagi_1,null),"또바기","서울 서대문구 명지대길 108","010-7600-2602","오늘은 영업 쉽니다.","CLOSE");
 
         adapter.notifyDataSetChanged();
+        adapter.setOnItemClickListener(new FavoriteCafe_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                ((MainActivity) context).replaceFragment(Cafe_infomation_fragment.newInstance(), null);
+                sv_main.scrollTo(0,0);
+                Toast.makeText(context, "카페 상세화면으로 이동", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }

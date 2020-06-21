@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,7 @@ public class Community_review_write_fragment extends Fragment {
     EditText review, hashtag;
     RatingBar star_num;
     Button btn_write;
+    Profile_CustomDialog dialog = null;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

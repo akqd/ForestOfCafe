@@ -25,7 +25,7 @@ public class Profile_fragment extends Fragment {
     View v ;
     Profile_CustomDialog dialog = null;
     ProfileListView_Adapter pAdapter = null;
-    Profile_CustomDialog dialog = null;
+
 
     @Override
 

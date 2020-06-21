@@ -108,6 +108,15 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
 
         fAdapter.notifyDataSetChanged();
 
+        fAdapter.setOnItemClickListener(new MainFavorite_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                ((MainActivity) context).replaceFragment(Cafe_infomation_fragment.newInstance(), null);
+                sv_main.scrollTo(0,0);
+                Toast.makeText(context, "카페 상세화면으로 이동", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         tvFavoriteCafeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
