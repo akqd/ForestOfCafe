@@ -1,53 +1,59 @@
 package com.example.forestofcafe;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class MainCommunity_Adapter extends RecyclerView.Adapter<MainCommunity_Adapter.ViewHolder> {
+public class MainCommunity_Adapter extends RecyclerView.Adapter<MainCommunity_Adapter.ViewHoler> {
 
-    private List<MainCommunity_Item> community_itemList;
+    private ArrayList<MainCommunity_Item> data = null;
+    MainCommunity_Adapter.OnItemClickListener mListener;
 
-    public MainCommunity_Adapter(List<MainCommunity_Item> community_itemList) {
-        this.community_itemList = community_itemList;
-    }
+    public MainCommunity_Adapter(ArrayList<MainCommunity_Item> list){data = list;}
 
 
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_holder_main_community, viewGroup, false);
-        return new ViewHolder(view);
+    public MainCommunity_Adapter.ViewHoler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.view_holder_main_community, parent, false);
+        MainCommunity_Adapter.ViewHoler vh = new MainCommunity_Adapter.ViewHoler(view);
+        return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        int profile = community_itemList.get(position).getProfile();
-        int cafeimage = community_itemList.get(position).getCafe_image();
-        String id = community_itemList.get(position).getWriter_name();
-        String cafe_name = community_itemList.get(position).cafe_name;
-        String like_num = community_itemList.get(position).getLike_num();
-        String commnet_num = community_itemList.get(position).getComment_num();
-        String score = community_itemList.get(position).getScore_num();
-        String review = community_itemList.get(position).getCafe_review();
-        viewHolder.setData(profile, cafeimage, id,cafe_name, like_num, commnet_num, score, review);
+    public void onBindViewHolder(@NonNull MainCommunity_Adapter.ViewHoler holder, int position) {
+        MainCommunity_Item item = data.get(position);
+        holder.profile.setImageDrawable(item.getProfile());
+        holder.cafe_img.setImageDrawable(item.getCafe_Img());
+        holder.id.setText(item.getId());
+        holder.cafe_name.setText(item.getCafe_Name());
+        holder.like_num.setText(item.getLike_Num());
+        holder.comment_num.setText(item.getComment_Num());
+        holder.score.setText(item.getScore());
+        holder.review.setText(item.getReview());
     }
 
     @Override
     public int getItemCount() {
-        return community_itemList.size();
+        return data.size();
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHoler extends RecyclerView.ViewHolder {
+
         private ImageView profile;
         private ImageView cafe_img;
         private TextView id;
@@ -57,7 +63,7 @@ public class MainCommunity_Adapter extends RecyclerView.Adapter<MainCommunity_Ad
         private TextView score;
         private TextView review;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHoler(@NonNull View itemView) {
             super(itemView);
 
             profile = itemView.findViewById(R.id.comm_writerProfile);
@@ -68,17 +74,26 @@ public class MainCommunity_Adapter extends RecyclerView.Adapter<MainCommunity_Ad
             comment_num = itemView.findViewById(R.id.comm_commentnum);
             score = itemView.findViewById(R.id.comm_score);
             review = itemView.findViewById(R.id.comm_review);
-        }
 
-        private void setData(int userprofile, int cafeimg, String userid, String cname, String likenum, String commnetnum, String scorenum, String cafereview){
-            profile.setImageResource(userprofile);
-            cafe_img.setImageResource(cafeimg);
-            id.setText(userid);
-            cafe_name.setText(cname);
-            like_num.setText(likenum);
-            comment_num.setText(commnetnum);
-            score.setText(scorenum);
-            review.setText(cafereview);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        MainCommunity_Item item = data.get(pos);
+                        if(mListener != null) {
+                            mListener.onItemClick(v, pos);
+                        }
+                    }
+                }
+            });
         }
+    }
+    public interface OnItemClickListener{
+        void onItemClick(View v, int position);
+    }
+
+    public void setOnItemClickListener(MainCommunity_Adapter.OnItemClickListener listener){
+        mListener = listener;
     }
 }
