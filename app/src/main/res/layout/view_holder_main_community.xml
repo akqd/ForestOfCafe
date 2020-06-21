@@ -38,6 +38,7 @@
         android:padding="0dp"
         android:scaleType="centerInside"
         android:src="@drawable/ic_heart"
+        android:background="@null"
         app:layout_constraintEnd_toStartOf="@+id/comm_likenum"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -44,6 +44,7 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_heart"
                 app:layout_constraintEnd_toStartOf="@id/like_num"
+                android:background="@null"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
