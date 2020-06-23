@@ -79,6 +79,7 @@ public class Community_post_fragment extends Fragment {
                     dlg.setTitle("알림");
                     dlg.setMessage("댓글을 등록할까요?");
                     dlg.setPositiveButton("확인", null);
+                    dlg.setNegativeButton("취소", null);
                     dlg.show();
                 }
             }

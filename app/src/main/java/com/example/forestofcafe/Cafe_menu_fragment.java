@@ -49,7 +49,6 @@ public class Cafe_menu_fragment extends Fragment {
             @Override
             public void onItemClick(View v, int position) {
                 //((MainActivity) context).replaceFragment(Community_post_fragment.newInstance(), null);
-                Toast.makeText(context, position + "번 메뉴", Toast.LENGTH_SHORT).show();
             }
         });
     }

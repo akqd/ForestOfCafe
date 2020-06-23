@@ -54,6 +54,7 @@ public class Community_review_write_fragment extends Fragment {
                     dlg.setTitle("알림");
                     dlg.setMessage("작성된 글을 등록할까요?");
                     dlg.setPositiveButton("확인", null);
+                    dlg.setNegativeButton("취소", null);
                     dlg.show();
                 }
             }
