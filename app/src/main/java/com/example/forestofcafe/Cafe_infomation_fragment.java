@@ -115,19 +115,19 @@ public class Cafe_infomation_fragment extends Fragment implements OnMapReadyCall
             }
         });
 
+        //메뉴정보화면으로 이동
         info_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity) context).replaceFragment(Cafe_menu_fragment.newInstance(), null);
-                Toast.makeText(context, "메뉴판으로 이동", Toast.LENGTH_SHORT).show();
             }
         });
 
+        //글작성화면으로 이동
         info_write_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity) context).replaceFragment(Community_review_write_fragment.newInstance(), null);
-                Toast.makeText(context, "글작성화면으로 이동", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -135,13 +135,13 @@ public class Cafe_infomation_fragment extends Fragment implements OnMapReadyCall
         addsubcommitem(getResources().getDrawable(R.drawable.review2), getResources().getDrawable(R.drawable.ic_profile), "블거지", "또바기", "서울 서대문구 명지대길 108", "제가찾던 카페가 여기있었네요~", "6", "14", (float) 4.5);
         addsubcommitem(getResources().getDrawable(R.drawable.review3), getResources().getDrawable(R.drawable.ic_profile), "커피중독자", "또바기", "서울 서대문구 명지대길 108", "분위기때문이라도 와볼만하네요. 신기한 커피도 많고 맛도 나쁘지 않아요", "11", "17", (float) 4.0);
 
+        //글 자세히보기 페이지로 이동
         Adapter.notifyDataSetChanged();
         Adapter.setOnItemClickListener(new SubCommunity_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 ((MainActivity) context).replaceFragment(Community_post_fragment.newInstance(), null);
                 sv_main.scrollTo(0,0);
-                Toast.makeText(context, position + "번", Toast.LENGTH_SHORT).show();
             }
         });
 

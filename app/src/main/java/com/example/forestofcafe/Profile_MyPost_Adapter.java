@@ -90,14 +90,14 @@ public class Profile_MyPost_Adapter extends RecyclerView.Adapter<Profile_MyPost_
                     View.OnClickListener postiveListner = new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(context,"수정 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                            //수정버튼 클릭
                             dialog.dismiss();
                         }
                     };
                     View.OnClickListener negativeListner = new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(context,"취소 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                            //취소버튼 클릭
                             dialog.dismiss();
                         }
                     };
@@ -111,14 +111,14 @@ public class Profile_MyPost_Adapter extends RecyclerView.Adapter<Profile_MyPost_
                     View.OnClickListener postiveListner = new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(context,"삭제 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                            //삭제버튼 클릭
                             dialog.dismiss();
                         }
                     };
                     View.OnClickListener negativeListner = new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(context,"취소 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                            //취소버튼 클릭
                             dialog.dismiss();
                         }
                     };

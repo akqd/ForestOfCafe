@@ -83,12 +83,12 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
         addCafeListItem("하우디", "430m", "OPEN", getResources().getDrawable(R.drawable.cafe_howdy_1, null));
         mAdapter.notifyDataSetChanged();
 
+        //카페 상세화면으로 이동
         mAdapter.setOnItemClickListener(new MainCafeList_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 ((MainActivity) context).replaceFragment(Cafe_infomation_fragment.newInstance(), null);
                 sv_main.scrollTo(0,0);
-                Toast.makeText(context, "카페 상세화면으로 이동", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -108,12 +108,12 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
 
         fAdapter.notifyDataSetChanged();
 
+        //카페 상세화면으로 이동
         fAdapter.setOnItemClickListener(new MainFavorite_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
                 ((MainActivity) context).replaceFragment(Cafe_infomation_fragment.newInstance(), null);
                 sv_main.scrollTo(0,0);
-                Toast.makeText(context, "카페 상세화면으로 이동", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -145,13 +145,13 @@ public class Home_fragment extends Fragment implements OnMapReadyCallback {
             }
         });
 
+        //작성된 글 자세히보기로 이동
         cAdapter.notifyDataSetChanged();
         cAdapter.setOnItemClickListener(new MainCommunity_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 ((MainActivity) context).replaceFragment(Community_post_fragment.newInstance(), null);
                 sv_main.scrollTo(0,0);
-                Toast.makeText(context, "작성글 자세히보기로 이동", Toast.LENGTH_SHORT).show();
             }
         });
     }

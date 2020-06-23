@@ -81,7 +81,7 @@ public class StartActivity_Join extends AppCompatActivity {
                 View.OnClickListener negativeListner = new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(StartActivity_Join.this,"취소 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                        //취소버튼 클릭
                         dialog.dismiss();
                     }
                 };

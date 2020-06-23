@@ -66,7 +66,7 @@ public class Profile_fragment extends Fragment {
                         View.OnClickListener postiveListner = new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(context,"확인 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                                //확인버튼 클릭
                                 getActivity().finish();
                                 dialog.dismiss();
                             }
@@ -74,7 +74,7 @@ public class Profile_fragment extends Fragment {
                         View.OnClickListener negativeListner = new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(context,"취소 버튼을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+                                //취소버튼클릭
                                 dialog.dismiss();
                             }
                         };

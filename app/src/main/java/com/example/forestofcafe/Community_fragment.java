@@ -48,12 +48,12 @@ public class Community_fragment extends Fragment {
         addsubcommitem(getResources().getDrawable(R.drawable.cafe_thelight_1), getResources().getDrawable(R.drawable.ic_profile), "김준희", "카페 빛", "서울 은평구 응암로 14길 26-1", "지나가다 쉴겸 잠깐 들어왔는데 분위기 완전 좋아요~", "6", "14", (float) 4.5);
         addsubcommitem(getResources().getDrawable(R.drawable.cafe_timedifference_1), getResources().getDrawable(R.drawable.ic_profile), "커피중독자", "카페 시차", "서울 서대문구 증가로 10길 16-20", "사장님이 친절했고 커피향이 좋네요. 디저트는 안먹어봤는데 종류도 많아요.", "11", "17", (float) 4.0);
 
+        //게시글보기로 이동
         scAdapter.notifyDataSetChanged();
         scAdapter.setOnItemClickListener(new SubCommunity_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 ((MainActivity) context).replaceFragment(Community_post_fragment.newInstance(), null);
-                Toast.makeText(context, position + "번", Toast.LENGTH_SHORT).show();
             }
         });
     }

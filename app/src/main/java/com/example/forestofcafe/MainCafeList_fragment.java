@@ -72,12 +72,12 @@ public class MainCafeList_fragment extends Fragment implements OnMapReadyCallbac
         addItem(getResources().getDrawable(R.drawable.cafe_timedifference_1, null), "OPEN", "시차", "서울 서대문구 증가로 10길 16-20", "#디저트 #수제펑리수", "780m");
         mAdapter.notifyDataSetChanged();
 
+        //카페상세정보화면으로 이동
         mAdapter.setOnItemClickListener(new SearchResult_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 ((MainActivity) context).replaceFragment(Cafe_infomation_fragment.newInstance(), null);
                 sv_main.scrollTo(0,0);
-                Toast.makeText(context, "카페 상세화면으로 이동", Toast.LENGTH_SHORT).show();
             }
         });
     }
