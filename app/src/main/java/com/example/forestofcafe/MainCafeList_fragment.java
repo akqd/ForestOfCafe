@@ -31,10 +31,6 @@ import java.util.ArrayList;
 public class MainCafeList_fragment extends Fragment implements OnMapReadyCallback {
 
     Context context;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
     View v;
 
     RecyclerView rv_MainCafeListMore;

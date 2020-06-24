@@ -18,10 +18,6 @@ public class Setting_exit_fragment extends Fragment {
     boolean btn_point;
     Button btn;
     Context context;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
     View v;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

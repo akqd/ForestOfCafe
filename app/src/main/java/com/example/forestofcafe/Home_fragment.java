@@ -36,10 +36,6 @@ import java.util.List;
 
 public class Home_fragment extends Fragment implements OnMapReadyCallback {
     Context context;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
     View v;
     TextView tvCafeListMore, tvFavoriteCafeMore, comm_more;
     RecyclerView rv_MainCafeList, comm_recyclerView, fv_recyclerView;
